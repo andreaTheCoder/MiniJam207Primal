@@ -2,3 +2,8 @@ res://scripts/start_screen.gd
 res://scenes/ingredient.tscn
 res://scripts/global.gd
 res://scripts/potion.gd
+res://ticket_order.tscn
+res://scenes/ui.tscn
+res://scenes/ticket_panel.tscn
+res://scenes/potion.tscn
+res://scenes/shop.tscn
