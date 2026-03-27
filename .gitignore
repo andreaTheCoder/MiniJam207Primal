@@ -1,0 +1,41 @@
+# Godot 4+ specific ignores
+.godot/
+# Godot 3 specific ignores (if applicable for older projects)
+.import/
+# Optional: Ignore exported builds
+/builds/
+# Optional: Ignore C# specific files
+.mono/
+ loudness.txt
+# Optional: Ignore IDE/OS specific files (examples)
+.vs/
+.vscode/
+*.csproj
+*.sln
+[Rr]esharper[.-]*
+*.[Oo]bj
+*.user
+*.suo
+*[.-]Filtered.txt
+*.jcw
+*.lib
+*.ncb
+*.opensdf
+*.sdf
+*.aps
+*.lck
+*.vssscc
+*.jcp
+*.jcw
+*.jsw
+_builds/
+build/
+bin/
+obj/
+*.booproj
+*.lock.json
+*.opensdf
+*.sdf
+*.unityproj
+*.cfg
+*.bin
