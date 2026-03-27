@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0h3028ygun7w"]
+
+[ext_resource type="Script" uid="uid://b8dxxxwfx50oa" path="res://scripts/ingredient_home.gd" id="1_af5xl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af5xl"]
+size = Vector2(100, 100)
+
+[node name="Ingredient Home" type="Area2D" unique_id=998149927]
+script = ExtResource("1_af5xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1152077993]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_af5xl")

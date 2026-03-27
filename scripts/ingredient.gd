@@ -9,7 +9,6 @@ class_name Ingredient
 func _ready() -> void:
 	texture = preload("res://stock/input-prompts/Flair Icons/controller_battery_full.svg")
 	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	

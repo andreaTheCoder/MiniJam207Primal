@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfw8rieg8jjvk"]
 
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_lx5au"]
+[ext_resource type="PackedScene" uid="uid://b0h3028ygun7w" path="res://scenes/ingredient_home.tscn" id="2_1l46r"]
 [ext_resource type="PackedScene" uid="uid://ckxxx2f8cya88" path="res://scenes/potion.tscn" id="2_xfvoa"]
 
 [node name="shop" type="Node2D" unique_id=404250698]
@@ -9,4 +10,8 @@
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
+[node name="Ingredient Home" parent="." unique_id=998149927 instance=ExtResource("2_1l46r")]
+position = Vector2(-148, 218)
+
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
+position = Vector2(406, -28)
