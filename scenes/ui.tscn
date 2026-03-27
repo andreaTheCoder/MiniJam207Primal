@@ -1,18 +1,3 @@
 [gd_scene format=3 uid="uid://d13baxhqbwdm6"]
 
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
-
-[node name="Panel" type="Panel" parent="." unique_id=1760701443]
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 832.0
-offset_bottom = 133.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=679238702]
-offset_left = 21.0
-offset_top = 21.0
-offset_right = 812.0
-offset_bottom = 117.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "hi this is ui"
