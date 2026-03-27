@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 	else:
 		if not Input.is_action_pressed("click"):
 			dragging = false
+			global_position = Global.POTION_HOME
 	
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
@@ -27,3 +28,4 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	scale = Vector2(1.00, 1.00)
 	draggable = false
+	
