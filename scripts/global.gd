@@ -1,3 +1,3 @@
 extends Node
 
-const GAME = preload("res://scenes/game.tscn")
+const SHOP = preload("res://scenes/shop.tscn")

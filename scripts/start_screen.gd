@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var start_screen_tutorial_button: Button = $CanvasLayer/StartScreenTutorialButton
 @onready var start_screen_button: Button = $CanvasLayer/StartScreenButton
-const GAME = preload("res://scenes/game.tscn")
+const SHOP = preload("res://scenes/shop.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_screen_button_pressed() -> void:
-	get_tree().change_scene_to_packed(Global.GAME)
+	get_tree().change_scene_to_packed(Global.SHOP)
 
 
 func _on_start_screen_tutorial_button_pressed() -> void:

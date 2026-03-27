@@ -1,0 +1,4 @@
+res://scripts/global.gd
+res://scenes/start.tscn
+res://scripts/start_screen.gd
+res://scenes/shop.tscn
