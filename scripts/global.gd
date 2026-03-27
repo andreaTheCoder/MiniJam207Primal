@@ -10,3 +10,8 @@ enum INGREDIENTS
 }	
 
 const POTION_HOME = Vector2(500,500)
+
+func tweened_disappear(duration : float = 1.5, ease_type):
+	
+	
+	pass
