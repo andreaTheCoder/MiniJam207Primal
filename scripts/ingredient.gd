@@ -8,10 +8,18 @@ class_name Ingredient
 @export var leftHome := false
 @export var is_inside_droppable := false
 @export var area_ref = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	texture = preload("res://stock/input-prompts/Flair Icons/controller_battery_full.svg")
-	
+	match type:
+		Global.INGREDIENTS.FAIRY_WINGS:
+			texture = load("res://art/fairy wings.PNG")
+		Global.INGREDIENTS.ALLIGATOR_TEARS:
+			texture = load("res://art/alligator tears.PNG")
+		Global.INGREDIENTS.DRIED_BLURPLEBERRY:
+			texture = load("res://art/blurpleberry.PNG")
+		Global.INGREDIENTS.DRAGONS_BREATH:
+			texture = load("res://art/dragon's breath.PNG")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	

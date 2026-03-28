@@ -39,3 +39,4 @@ obj/
 *.unityproj
 *.cfg
 *.bin
+/.godot
