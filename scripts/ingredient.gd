@@ -5,7 +5,7 @@ class_name Ingredient
 @export var type : Global.INGREDIENTS
 @export var draggable := false
 @export var dragging := false
-@export var leftHome :=false
+@export var leftHome := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture = preload("res://stock/input-prompts/Flair Icons/controller_battery_full.svg")
@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if (draggable or dragging) and Input.is_action_pressed("click"):
+	if (draggable or dragging) and Input.is_action_pressed("click") :
 		global_position = get_global_mouse_position()
 		dragging = true	
 	else:

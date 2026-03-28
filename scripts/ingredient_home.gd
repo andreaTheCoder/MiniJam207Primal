@@ -25,7 +25,8 @@ func spawn_ingredient():
 
 
 func _on_area_exited(area: Area2D) -> void:
-	if not area.get_parent().leftHome:
-		call_deferred("spawn_ingredient")
-	else:
-		area.get_parent().leftHome = true
+	if area.get_parent() is Sprite2D:
+		if not area.get_parent().leftHome and area.get_parent().type == self.type:
+			call_deferred("spawn_ingredient")
+		else:
+			area.get_parent().leftHome = true
