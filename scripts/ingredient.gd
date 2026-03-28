@@ -20,11 +20,12 @@ func _process(_delta: float) -> void:
 		global_position = get_global_mouse_position()
 		dragging = true
 	else:
-		if not Input.is_action_pressed("click"):
+		if Input.is_action_just_released("click"):
 			if dragging:
 				dragging = false
 				if is_inside_droppable:
 					area_ref.ingredients.append(type)
+					print("Potion")
 					print(area_ref.ingredients)
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
@@ -42,14 +43,13 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Potion:
+	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = true
 		area_ref = area.get_parent()
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
-		
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.get_parent() is Potion:
+	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = false
 		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)

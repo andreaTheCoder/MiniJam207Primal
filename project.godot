@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Global="*uid://b3657vc4x7r80"
 AudioPlayer="*uid://11je2fqgcpqg"
+EventBus="*uid://dyxdprrn41xpq"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
 
 [display]
 

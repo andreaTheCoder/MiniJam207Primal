@@ -16,5 +16,5 @@ func _ready() -> void:
 		$Panel/Label.text += Global.convert_ingredient_names(ingedient_num)
 		i = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d13baxhqbwdm6" path="res://scenes/ui.tscn" id="1_lx5au"]
 [ext_resource type="PackedScene" uid="uid://b0h3028ygun7w" path="res://scenes/ingredient_home.tscn" id="2_1l46r"]
 [ext_resource type="PackedScene" uid="uid://ckxxx2f8cya88" path="res://scenes/potion.tscn" id="2_xfvoa"]
+[ext_resource type="PackedScene" uid="uid://c5kyrky6qutu8" path="res://scenes/tray.tscn" id="3_032fp"]
 
 [node name="shop" type="Node2D" unique_id=404250698]
 
@@ -10,8 +11,12 @@
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
+[node name="Tray" parent="." unique_id=611555033 instance=ExtResource("3_032fp")]
+position = Vector2(572, -1)
+
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
-position = Vector2(406, -28)
+position = Vector2(3.000061, -3.0000038)
+texture = null
 
 [node name="Homes" type="Node" parent="." unique_id=533110677]
 
