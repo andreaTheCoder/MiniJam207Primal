@@ -17,8 +17,9 @@ func _process(_delta: float) -> void:
 		dragging = true	
 	else:
 		if not Input.is_action_pressed("click"):
+			if dragging:
+				Global.tweened_disappear(self)
 			dragging = false
-			Global.tweened_disappear(self)
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
 	draggable = true
