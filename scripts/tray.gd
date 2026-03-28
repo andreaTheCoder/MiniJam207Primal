@@ -11,6 +11,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func potion_submit(ingredients):
-	print("tray: ")
-	print(ingredients)
+func potion_submit(potiondfxg, ingredients):
+	print(ingredients.size())
+	print(Global.orders[0].potion["ingredients"].size())
+	print(Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())))
+
+	

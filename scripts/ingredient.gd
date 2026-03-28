@@ -35,6 +35,7 @@ func _process(_delta: float) -> void:
 					area_ref.ingredients.append(type)
 					print("Potion")
 					print(area_ref.ingredients)
+					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
 				queue_free()
@@ -55,7 +56,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		is_inside_droppable = true
 		area_ref = area.get_parent()
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
-
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Potion and dragging:

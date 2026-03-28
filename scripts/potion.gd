@@ -22,8 +22,7 @@ func _process(_delta: float) -> void:
 	else:
 		if Input.is_action_just_released("click"):
 			if is_inside_droppable:
-					EventBus.potion_submitted.emit(ingredients)
-					ingredients.clear()
+					EventBus.potion_submitted.emit(self, ingredients)
 			Global.mouse_dragging_item = null
 			dragging = false
 			global_position = Global.POTION_HOME
