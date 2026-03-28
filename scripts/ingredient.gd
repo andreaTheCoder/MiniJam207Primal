@@ -6,6 +6,8 @@ class_name Ingredient
 @export var draggable := false
 @export var dragging := false
 @export var leftHome := false
+@export var is_inside_droppable := false
+@export var area_ref = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture = preload("res://stock/input-prompts/Flair Icons/controller_battery_full.svg")
@@ -13,15 +15,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if (draggable or dragging) and Input.is_action_pressed("click") :
+	if (Global.mouse_dragging_item == self or Global.mouse_dragging_item == null) and (draggable or dragging) and Input.is_action_pressed("click"):
+		Global.mouse_dragging_item = self
 		global_position = get_global_mouse_position()
-		dragging = true	
+		dragging = true
 	else:
 		if not Input.is_action_pressed("click"):
 			if dragging:
+				dragging = false
+				if is_inside_droppable:
+					area_ref.ingredients.append(type)
+					print(area_ref.ingredients)
+				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
 				queue_free()
-			dragging = false
+
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
 	draggable = true
@@ -29,3 +37,19 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	scale = Vector2(1.00, 1.00)
 	draggable = false
+
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Potion:
+		is_inside_droppable = true
+		area_ref = area.get_parent()
+		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
+		
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.get_parent() is Potion:
+		is_inside_droppable = false
+		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)

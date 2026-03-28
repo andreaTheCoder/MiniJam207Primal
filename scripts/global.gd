@@ -8,9 +8,9 @@ enum INGREDIENTS
 	DRIED_BLURPLEBERRY,
 	DRAGONS_BREATH
 }	
-
-const POTION_HOME = Vector2(500,500)
-
+var orders = []
+const POTION_HOME = Vector2(0,-200)
+var mouse_dragging_item = null
 
 func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tween.EaseType.EASE_IN, duration : float = .1):
 	'''
@@ -23,3 +23,19 @@ func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tw
 	tweener.set_ease(ease_type)
 	tweener.tween_property(object, "scale", target_scale, duration)
 	return tweener
+	
+const HOME_BREW = {
+	"ingredients" : [INGREDIENTS.FAIRY_WINGS, INGREDIENTS.DRIED_BLURPLEBERRY],
+	"name" : "Home Brew"
+}
+
+func convert_ingredient_names(ingredient:INGREDIENTS):
+	match ingredient:
+		INGREDIENTS.FAIRY_WINGS:
+			return "Fairy Wings"
+		INGREDIENTS.ALLIGATOR_TEARS:
+			return "Alligator Tears"
+		INGREDIENTS.DRIED_BLURPLEBERRY:
+			return "Dried Blurpleberry"
+		INGREDIENTS.DRAGONS_BREATH:
+			return "Dragon's Breath"

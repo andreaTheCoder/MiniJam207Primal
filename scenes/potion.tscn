@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://bvpouoppxum5b" path="res://scripts/potion.gd" id="2_itmmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_le10y"]
-size = Vector2(219, 461)
+size = Vector2(433, 629)
 
 [node name="Potion" type="Sprite2D" unique_id=1206123825]
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("1_le10y")
 script = ExtResource("2_itmmj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889516584]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117350784]
-position = Vector2(4.5, -18.5)
 shape = SubResource("RectangleShape2D_le10y")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

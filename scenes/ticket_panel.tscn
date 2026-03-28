@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cve6201jmyx3d"]
 
-[ext_resource type="Texture2D" uid="uid://c8fydd366datd" path="res://icon.svg" id="1_21wiw"]
+[ext_resource type="Script" uid="uid://buw07cfdvl57o" path="res://scripts/ticket_panel.gd" id="1_l6550"]
 
 [node name="TicketOrder" type="PanelContainer" unique_id=480745357]
 custom_minimum_size = Vector2(20, 20)
@@ -8,6 +8,7 @@ offset_right = 447.0
 offset_bottom = 393.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_l6550")
 
 [node name="Panel" type="MarginContainer" parent="." unique_id=2130206671]
 layout_mode = 2
@@ -16,8 +17,7 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=2083691562]
+[node name="Label" type="Label" parent="Panel" unique_id=128318875]
 layout_mode = 2
-texture = ExtResource("1_21wiw")
-expand_mode = 1
-stretch_mode = 5
+text = "bluck duck deblugger"
+autowrap_mode = 3
