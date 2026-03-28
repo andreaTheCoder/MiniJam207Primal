@@ -11,11 +11,21 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func spawn_ingredient():
 	var temp = INGREDIENT.instantiate()
 	temp.type = self.type
 	add_child(temp)
-	
+	temp.scale = Vector2(0,0)
+	Global.tween_scale(Vector2(1,1), temp)
+
+
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if not area.get_parent().leftHome:
+		call_deferred("spawn_ingredient")
+	else:
+		area.get_parent().leftHome = true
