@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ckxxx2f8cya88"]
 
+[ext_resource type="Texture2D" uid="uid://c5eo83qwh7rmb" path="res://art/potions/Empty Potion.png" id="1_le10y"]
 [ext_resource type="Script" uid="uid://bvpouoppxum5b" path="res://scripts/potion.gd" id="2_itmmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_le10y"]
 size = Vector2(219, 461)
 
 [node name="Potion" type="Sprite2D" unique_id=1206123825]
+texture = ExtResource("1_le10y")
 script = ExtResource("2_itmmj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889516584]
