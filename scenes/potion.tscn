@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bpha355oppvri" path="res://art/Empty Bottle.png" id="1_le10y"]
 [ext_resource type="Script" uid="uid://bvpouoppxum5b" path="res://scripts/potion.gd" id="2_itmmj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_le10y"]
-size = Vector2(303.70453, 435.7121)
+[sub_resource type="CircleShape2D" id="CircleShape2D_le10y"]
+radius = 109.0909
 
 [node name="Potion" type="Sprite2D" unique_id=1206123825]
 scale = Vector2(0.66, 0.66)
@@ -13,10 +13,9 @@ script = ExtResource("2_itmmj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889516584]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=117350784]
-position = Vector2(-4.545454, 4.5454545)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_le10y")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=952006365]
+position = Vector2(-4.545454, 80.30303)
+shape = SubResource("CircleShape2D_le10y")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

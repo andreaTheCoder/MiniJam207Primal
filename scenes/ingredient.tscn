@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4kvl12ifk4la" path="res://scripts/ingredient.gd" id="1_rcex7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcex7"]
-size = Vector2(65, 54)
+size = Vector2(96.5, 85)
 
 [node name="Ingredient" type="Sprite2D" unique_id=1083882300]
 script = ExtResource("1_rcex7")
@@ -11,7 +11,6 @@ script = ExtResource("1_rcex7")
 [node name="Area2D" type="Area2D" parent="." unique_id=525207667]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1771377965]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_rcex7")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
