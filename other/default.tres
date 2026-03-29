@@ -1,7 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://dn4leoiqtpx61"]
 
 [ext_resource type="FontFile" uid="uid://bqax0fflfbnj6" path="res://other/PlaypenSansThai-VariableFont_wght.ttf" id="1_l4auq"]
+[ext_resource type="StyleBox" uid="uid://dynrau07b6e36" path="res://default_button_stylebox.tres" id="1_rdli0"]
 [ext_resource type="FontFile" uid="uid://c2bq7kdi3bdtf" path="res://other/TheGirlNextDoor-Regular.ttf" id="1_w2jdw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdli0"]
+bg_color = Color(0.9238702, 0.7435122, 0.5332813, 1)
+border_width_top = 10
+border_color = Color(0.47843137, 0.33333334, 0.13725491, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iixvo"]
 bg_color = Color(0.4977774, 0.6930199, 0.78713024, 1)
@@ -13,8 +23,13 @@ corner_radius_bottom_left = 50
 [resource]
 default_font = ExtResource("1_w2jdw")
 default_font_size = 20
+Button/colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+Button/styles/hover = ExtResource("1_rdli0")
+Button/styles/normal = ExtResource("1_rdli0")
+Button/styles/pressed = SubResource("StyleBoxFlat_rdli0")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/fonts/font = ExtResource("1_l4auq")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_iixvo")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/normal_font_size = 25
 RichTextLabel/fonts/normal_font = ExtResource("1_l4auq")

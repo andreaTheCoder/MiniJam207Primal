@@ -9,12 +9,12 @@ script = ExtResource("1_jaeev")
 
 [node name="StartScreenTutorialButton" type="Button" parent="CanvasLayer" unique_id=688141163]
 anchors_preset = -1
-anchor_top = -0.16820988
-anchor_right = 0.2847222
-offset_left = 290.0
-offset_top = 380.0
-offset_right = 462.0
-offset_bottom = 445.0
+anchor_top = -0.041666668
+anchor_right = 0.1467014
+offset_left = 376.0
+offset_top = 329.0
+offset_right = 548.0
+offset_bottom = 394.0
 text = "tutorial"
 metadata/_edit_use_anchors_ = true
 
