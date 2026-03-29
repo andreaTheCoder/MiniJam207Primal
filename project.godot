@@ -13,6 +13,8 @@ config_version=5
 config/name="Mini Game Jam 207 Primal"
 run/main_scene="uid://bfw8rieg8jjvk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.5883614, 0.51032674, 0.40294388, 1)
+boot_splash/image="uid://bpha355oppvri"
 config/icon="res://icon.svg"
 
 [autoload]
