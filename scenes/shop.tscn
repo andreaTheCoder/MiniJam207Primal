@@ -9,6 +9,7 @@
 [node name="shop" type="Node2D" unique_id=404250698]
 
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_lx5au")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
@@ -31,12 +32,12 @@ position = Vector2(485, 250)
 type = 3
 
 [node name="Ingredient Home3" parent="Homes" unique_id=1265972195 instance=ExtResource("2_1l46r")]
-position = Vector2(273, 249)
+position = Vector2(235, 249)
 type = 2
 
 [node name="Ingredient Home2" parent="Homes" unique_id=556907411 instance=ExtResource("2_1l46r")]
-position = Vector2(-322, 219)
+position = Vector2(-256, 240)
 type = 1
 
 [node name="Ingredient Home" parent="Homes" unique_id=982167561 instance=ExtResource("2_1l46r")]
-position = Vector2(-475, 207)
+position = Vector2(-467, 235)
