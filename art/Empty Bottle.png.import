@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5eo83qwh7rmb"
-path="res://.godot/imported/Empty Potion.png-db40fd714d8e98ab0f903cbbeeec7346.ctex"
+uid="uid://bpha355oppvri"
+path="res://.godot/imported/Empty Bottle.png-0a83d7d591ed5be4467a979b8b802733.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/potions/Empty Potion.png"
-dest_files=["res://.godot/imported/Empty Potion.png-db40fd714d8e98ab0f903cbbeeec7346.ctex"]
+source_file="res://art/Empty Bottle.png"
+dest_files=["res://.godot/imported/Empty Bottle.png-0a83d7d591ed5be4467a979b8b802733.ctex"]
 
 [params]
 
