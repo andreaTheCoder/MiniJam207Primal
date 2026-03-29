@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func potion_submit(ingredients):
+func potion_submit(potionparam, ingredients):
 	if not Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())):
 		return
 	else:
@@ -20,6 +20,7 @@ func potion_submit(ingredients):
 			var tempIngredients = ingredients.duplicate()
 			if sort_enum_return_as_ints(tempIngredients) == sort_enum_return_as_ints(tempPotionIngredients):
 				print("omg your order is valid bro")
+				potionparam.ingredients.clear()
 				return
 func sort_enum_return_as_ints(arr ):
 	var tempArray := []
