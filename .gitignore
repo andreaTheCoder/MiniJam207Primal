@@ -40,3 +40,4 @@ obj/
 *.cfg
 *.bin
 /.godot
+.DS_Store
