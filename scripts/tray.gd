@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 
 func potion_submit(potionparam, ingredients):
 	if not Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())):
+		potionparam.ingredients.clear()
 		return
 	else:
 		var i =0
@@ -31,7 +32,7 @@ func potion_submit(potionparam, ingredients):
 					EventBus.out_of_tickets.emit()
 				return
 			i+=1
-			
+		potionparam.ingredients.clear()
 func sort_enum_return_as_ints(arr ):
 	var tempArray := []
 	for ingredient in arr:

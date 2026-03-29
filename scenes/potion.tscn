@@ -18,6 +18,7 @@ position = Vector2(-4.545454, 80.30303)
 shape = SubResource("CircleShape2D_le10y")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=467838191]
+visible = false
 position = Vector2(-1.5151501, 21.21212)
 scale = Vector2(0.89506173, 0.84671533)
 color = Color(0.5058824, 0.61960787, 0.654902, 1)

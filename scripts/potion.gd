@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_released("click"):
 			if is_inside_droppable:
 					EventBus.potion_submitted.emit(self, ingredients)
+					self.modulate = Color(Color.WHITE, 1)
 			Global.mouse_dragging_item = null
 			dragging = false
 			global_position = Global.POTION_HOME
