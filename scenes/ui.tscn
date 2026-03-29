@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d13baxhqbwdm6"]
 
 [ext_resource type="PackedScene" uid="uid://cve6201jmyx3d" path="res://scenes/ticket_panel.tscn" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://bt6e6iikcm33m" path="res://scenes/ui.gd" id="1_x4jx1"]
 
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
+script = ExtResource("1_x4jx1")
 
 [node name="Panel" type="Panel" parent="." unique_id=1760701443]
 visible = false
@@ -22,8 +24,8 @@ size_flags_vertical = 8
 text = "hi this is ui"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=731260153]
-offset_right = 906.0
-offset_bottom = 376.0
+offset_right = 870.0
+offset_bottom = 167.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -31,9 +33,10 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HorizontalTicketContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1815750442]
 layout_mode = 2
-theme_override_constants/separation = 50
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
 
-[node name="TicketOrder3" parent="MarginContainer/HorizontalTicketContainer" unique_id=837133496 instance=ExtResource("1_nt7q6")]
+[node name="TicketOrder3" parent="MarginContainer/HorizontalTicketContainer" unique_id=480745357 instance=ExtResource("1_nt7q6")]
 layout_mode = 2
 
 [node name="TicketOrder2" parent="MarginContainer/HorizontalTicketContainer" unique_id=911897165 instance=ExtResource("1_nt7q6")]

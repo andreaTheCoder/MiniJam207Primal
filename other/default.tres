@@ -11,6 +11,7 @@ corner_radius_bottom_left = 50
 
 [resource]
 default_font = ExtResource("1_w2jdw")
-default_font_size = 30
+default_font_size = 20
+Label/colors/font_color = Color(0, 0, 0, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_iixvo")
 RichTextLabel/font_sizes/bold_font_size = 16

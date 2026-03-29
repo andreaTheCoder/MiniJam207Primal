@@ -17,6 +17,12 @@ script = ExtResource("2_itmmj")
 position = Vector2(-4.545454, 80.30303)
 shape = SubResource("CircleShape2D_le10y")
 
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=467838191]
+position = Vector2(-1.5151501, 21.21212)
+scale = Vector2(0.89506173, 0.84671533)
+color = Color(0.5058824, 0.61960787, 0.654902, 1)
+polygon = PackedVector2Array(113.63635, 127.27271, 78.78787, 174.24242, -81.81818, 172.72726, -131.81818, 83.33333, -68.18181, -21.21212, 27.272724, -33.333332, 93.939384, 21.21212)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
