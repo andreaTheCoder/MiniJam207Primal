@@ -11,16 +11,36 @@ const GAME = preload("res://scenes/game.tscn")
 
 var tutorial_data : Array = [
 	{
-		"text":"you are an avid nature photographer",
-		"image_path":"res://stock/input-prompts/Controller Icons/generic_button.svg"
+		"text":"",
+		"image_path":"res://art/tutorial/1.PNG"
 	},
 	{
-		"text":"too bad you are BROKE!!!",
-		"image_path":"res://stock/input-prompts/Controller Icons/generic_button_circle.svg"
+		"text":"You are starting the very first potion store ever!",
+		"image_path":"res://art/tutorial/2.PNG"
 	},
 	{
-		"text":"are we broke or is the broke broking us",
-		"image_path":"res://stock/input-prompts/Controller Icons/generic_button_trigger_a_fill.svg"
+		"text":"It's up to you to show the world how awesome potions are",
+		"image_path":"res://art/tutorial/3.PNG"
+	},
+	{
+		"text":"Find your orders for the day here, with the ingredients to make it",
+		"image_path":"res://art/tutorial/4.PNG"
+	},
+	{
+		"text":"Drag the ingridients to the potion to add them in",
+		"image_path":"res://art/tutorial/5.PNG"
+	},
+	{
+		"text":"When your done, drag the potion to the tray. Or discard your potion",
+		"image_path":"res://art/tutorial/6.PNG"
+	},
+	{
+		"text":"Try to complete your orders by the end of the day! Time is ticking.",
+		"image_path":"res://art/tutorial/7.PNG"
+	},
+	{
+		"text":"",
+		"image_path":"res://art/tutorial/8.PNG"
 	},
 ]
 func _ready() -> void:
