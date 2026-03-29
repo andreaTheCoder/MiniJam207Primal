@@ -11,7 +11,7 @@ enum INGREDIENTS
 var orders = []
 const POTION_HOME = Vector2(0,0)
 var mouse_dragging_item = null
-var curr_potion = self
+var potion
 func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tween.EaseType.EASE_IN, duration : float = .1):
 	'''
 	enter num 0 - 1

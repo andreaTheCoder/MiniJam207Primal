@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://c5kyrky6qutu8"]
 
-[ext_resource type="Texture2D" uid="uid://d4jwosxc4mxwa" path="res://stock/input-prompts/Controller Icons/generic_joystick_red_horizontal.svg" id="1_74t8f"]
+[ext_resource type="Texture2D" uid="uid://ddq8m8phmmjw" path="res://art/tray.png" id="1_6bidj"]
 [ext_resource type="Script" uid="uid://dumdpkycipotm" path="res://scripts/tray.gd" id="2_6bidj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqs7k"]
-size = Vector2(178.5, 460)
+size = Vector2(364, 576)
 
 [node name="Tray" type="Sprite2D" unique_id=611555033]
-texture = ExtResource("1_74t8f")
+texture = ExtResource("1_6bidj")
 script = ExtResource("2_6bidj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1892541558]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=245803037]
-position = Vector2(-0.75, 0)
 shape = SubResource("RectangleShape2D_jqs7k")

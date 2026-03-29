@@ -17,7 +17,7 @@ scale = Vector2(0.6064815, 0.6064815)
 texture = ExtResource("5_2fc2m")
 
 [node name="Tray" parent="." unique_id=611555033 instance=ExtResource("3_032fp")]
-position = Vector2(572, -1)
+position = Vector2(649, 24)
 
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
 scale = Vector2(1, 1)

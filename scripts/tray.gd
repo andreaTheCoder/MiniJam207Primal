@@ -17,7 +17,7 @@ func potion_submit(potionparam, ingredients):
 		potionparam.ingredients.clear()
 		return
 	else:
-		var i =0
+		var i = 0
 		for orders in Global.orders:
 			var tempPotionIngredients = orders.potion["ingredients"]
 			var tempIngredients = ingredients.duplicate()

@@ -7,7 +7,7 @@ class_name Ingredient
 @export var dragging := false
 @export var leftHome := false
 @export var is_inside_droppable := false
-@export var area_ref : Potion = null
+@export var area_ref = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +36,7 @@ func _process(_delta: float) -> void:
 					print("Potion")
 					print(area_ref.ingredients)
 					area_ref.potion_liquid.show()
+					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
 				queue_free()
@@ -60,9 +61,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = false
-		if area_ref.ingredients.size() > 0:
-			area_ref.modulate = Color(0.945, 0.212, 0.251, 1.0)
-		else:
-			area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
+		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
 		area_ref.scale = Vector2(1.00, 1.00)

@@ -13,6 +13,7 @@ class_name Potion
 func _ready() -> void:
 	texture = preload("res://art/Empty Bottle.png")
 	potion_liquid.hide()
+	Global.potion = self
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,8 +26,8 @@ func _process(_delta: float) -> void:
 	else:
 		if Input.is_action_just_released("click"):
 			if is_inside_droppable:
+					potion_liquid.hide()
 					EventBus.potion_submitted.emit(self, ingredients)
-					self.modulate = Color(Color.WHITE, 1)
 			Global.mouse_dragging_item = null
 			dragging = false
 			global_position = Global.POTION_HOME
@@ -44,9 +45,10 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Tray:
 		is_inside_droppable = true
+		area.get_parent().scale = Vector2(1.05, 1.05)
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Tray:
 		is_inside_droppable = false
-		potion_liquid.hide()
+		area.get_parent().scale = Vector2(1.00, 1.00)
 		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
