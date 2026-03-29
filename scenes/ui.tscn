@@ -33,9 +33,6 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="TicketOrder4" parent="MarginContainer/HorizontalTicketContainer" unique_id=480745357 instance=ExtResource("1_nt7q6")]
-layout_mode = 2
-
 [node name="TicketOrder3" parent="MarginContainer/HorizontalTicketContainer" unique_id=837133496 instance=ExtResource("1_nt7q6")]
 layout_mode = 2
 
