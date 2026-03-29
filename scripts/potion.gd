@@ -15,10 +15,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if (Global.mouse_dragging_item == self or Global.mouse_dragging_item == null) and (draggable or dragging) and Input.is_action_pressed("click"):
+	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
 		Global.mouse_dragging_item = self
+		dragging = true
+	if Global.mouse_dragging_item == self and dragging and Input.is_action_pressed("click"):
 		global_position = get_global_mouse_position()
-		dragging = true	
 	else:
 		if Input.is_action_just_released("click"):
 			if is_inside_droppable:
