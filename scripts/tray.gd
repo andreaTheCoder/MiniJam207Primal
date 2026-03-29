@@ -11,9 +11,23 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func potion_submit(potiondfxg, ingredients):
-	print(ingredients.size())
-	print(Global.orders[0].potion["ingredients"].size())
-	print(Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())))
+func potion_submit(ingredients):
+	if not Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())):
+		return
+	else:
+		for orders in Global.orders:
+			var tempPotionIngredients = orders.potion["ingredients"]
+			var tempIngredients = ingredients.duplicate()
+			if sort_enum_return_as_ints(tempIngredients) == sort_enum_return_as_ints(tempPotionIngredients):
+				print("omg your order is valid bro")
+				return
+func sort_enum_return_as_ints(arr ):
+	var tempArray := []
+	for ingredient in arr:
+		var index : int = ingredient
+		tempArray.append(index)
+	tempArray.sort()
+	print(tempArray)
+	return tempArray	
 
 	
