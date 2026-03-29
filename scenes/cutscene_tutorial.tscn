@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl6fsltd4e43y" path="res://scripts/tutorial.gd" id="1_a6fc2"]
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="2_a6fc2"]
+[ext_resource type="Texture2D" uid="uid://db0m4ahsktrut" path="res://art/tutorial/1.PNG" id="3_4lcpb"]
 
 [node name="CutsceneTutorial" type="Node2D" unique_id=965549165]
 script = ExtResource("1_a6fc2")
@@ -12,8 +13,9 @@ layer = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1232120192]
 
 [node name="TutorialImage" type="Sprite2D" parent="CanvasLayer" unique_id=1665876256]
-position = Vector2(576, 313)
-scale = Vector2(9, 4.890625)
+position = Vector2(584.5556, 331.875)
+scale = Vector2(0.61319435, 0.61319435)
+texture = ExtResource("3_4lcpb")
 
 [node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1700390402]
 offset_left = 59.0
