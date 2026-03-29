@@ -21,23 +21,22 @@ texture = ExtResource("5_2fc2m")
 position = Vector2(572, -1)
 
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
-position = Vector2(3.000061, -3.0000038)
 scale = Vector2(1, 1)
 texture = null
 
 [node name="Homes" type="Node" parent="." unique_id=533110677]
 
 [node name="Ingredient Home4" parent="Homes" unique_id=998149927 instance=ExtResource("2_1l46r")]
-position = Vector2(-63, 215)
+position = Vector2(485, 250)
 type = 3
 
 [node name="Ingredient Home3" parent="Homes" unique_id=1265972195 instance=ExtResource("2_1l46r")]
-position = Vector2(-213, 215)
+position = Vector2(273, 249)
 type = 2
 
 [node name="Ingredient Home2" parent="Homes" unique_id=556907411 instance=ExtResource("2_1l46r")]
-position = Vector2(-361, 211)
+position = Vector2(-322, 219)
 type = 1
 
 [node name="Ingredient Home" parent="Homes" unique_id=982167561 instance=ExtResource("2_1l46r")]
-position = Vector2(-509, 212)
+position = Vector2(-475, 207)
