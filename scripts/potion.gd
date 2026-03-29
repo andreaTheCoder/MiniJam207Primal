@@ -9,7 +9,7 @@ class_name Potion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	texture = preload("res://art/potions/Empty Potion.png")
+	texture = preload("res://art/Empty Bottle.png")
 	
 	
 
