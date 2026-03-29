@@ -7,10 +7,12 @@ class_name Potion
 @export var dragging := false
 @export var is_inside_droppable := false
 
+@onready var potion_liquid: Sprite2D = $"Potion Liquid"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture = preload("res://art/Empty Bottle.png")
-	
+	potion_liquid.hide()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,8 +45,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Tray:
 		is_inside_droppable = true
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Tray:
 		is_inside_droppable = false
+		potion_liquid.hide()
 		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
