@@ -11,4 +11,11 @@ script = ExtResource("1_af5xl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1152077993]
 shape = SubResource("RectangleShape2D_af5xl")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=77996312]
+offset_left = -46.0
+offset_top = 54.0
+offset_right = 44.0
+offset_bottom = 79.0
+color = Color(0, 0, 0, 0.16862746)
+
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

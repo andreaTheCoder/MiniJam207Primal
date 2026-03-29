@@ -19,6 +19,13 @@ texture = ExtResource("5_2fc2m")
 [node name="Tray" parent="." unique_id=611555033 instance=ExtResource("3_032fp")]
 position = Vector2(649, 24)
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=983396833]
+offset_left = -155.0
+offset_top = 179.0
+offset_right = 153.0
+offset_bottom = 235.1841
+color = Color(0, 0, 0, 0.24313726)
+
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
 scale = Vector2(1, 1)
 texture = null
