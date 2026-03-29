@@ -1,5 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://dn4leoiqtpx61"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iixvo"]
+bg_color = Color(0.4977774, 0.6930199, 0.78713024, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [resource]
 default_font_size = 30
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_iixvo")
 RichTextLabel/font_sizes/bold_font_size = 16
