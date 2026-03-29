@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	if time < 20:
+	if time < 24:
 		time += 1
 		set_time()
 	else:

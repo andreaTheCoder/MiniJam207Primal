@@ -1,5 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dn4leoiqtpx61"]
 
+[ext_resource type="FontFile" uid="uid://bqax0fflfbnj6" path="res://other/PlaypenSansThai-VariableFont_wght.ttf" id="1_l4auq"]
 [ext_resource type="FontFile" uid="uid://c2bq7kdi3bdtf" path="res://other/TheGirlNextDoor-Regular.ttf" id="1_w2jdw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iixvo"]
@@ -13,6 +14,7 @@ corner_radius_bottom_left = 50
 default_font = ExtResource("1_w2jdw")
 default_font_size = 20
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/fonts/font = ExtResource("1_w2jdw")
+Label/fonts/font = ExtResource("1_l4auq")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_iixvo")
-RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 25
+RichTextLabel/fonts/normal_font = ExtResource("1_l4auq")

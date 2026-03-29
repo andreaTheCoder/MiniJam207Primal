@@ -80,4 +80,4 @@ func loadIndexItems(index, is_fading: bool):
 func _on_start_button_pressed() -> void:
 	await fade.fade(1, 2.0).finished
 	print("Starting game, from tutorial cutscene")
-	get_tree().change_scene_to_packed(Global.GAME)
+	get_tree().change_scene_to_packed(Global.SHOP)

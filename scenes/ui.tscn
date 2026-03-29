@@ -47,20 +47,23 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Day Label" type="RichTextLabel" parent="." unique_id=1768498442]
-offset_left = 813.0
-offset_right = 950.0
-offset_bottom = 81.0
+offset_left = 824.0
+offset_top = -1.0
+offset_right = 961.0
+offset_bottom = 80.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Day: 0"
 
 [node name="Time Label" type="RichTextLabel" parent="." unique_id=1714952886]
-offset_left = 950.0
-offset_right = 1185.0
-offset_bottom = 81.0
+offset_left = 823.0
+offset_top = 84.0
+offset_right = 1138.0
+offset_bottom = 165.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Time: 10:00"
 
 [node name="Timer" type="Timer" parent="Time Label" unique_id=350988001]
+wait_time = 3.0
 autostart = true
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_yev5y")]
