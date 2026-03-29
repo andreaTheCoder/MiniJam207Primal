@@ -7,6 +7,9 @@ extends Node2D
 # only one song can play at a time so if you call the music 
 # it will override the other one but the sfx can play
 # simultaneously
+const BUTTON_DOWN = preload("res://audio/click_002.ogg")
+const BUTTON_UP = preload("res://audio/click_003.ogg")
+ 
 
 func play_sfx(Stream, Volume):
 	var fx = AudioStreamPlayer.new()

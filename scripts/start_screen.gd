@@ -13,9 +13,25 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_start_screen_button_pressed() -> void:
-	get_tree().change_scene_to_packed(Global.SHOP)
+func button_pressed(isDown):
+	if isDown:
+		AudioPlayer.play_sfx(AudioPlayer.BUTTON_DOWN, 15)
+	else:
+		AudioPlayer.play_sfx(AudioPlayer.BUTTON_UP, 15)
+
+func _on_start_screen_button_button_down() -> void:
+	button_pressed(true)
+
+func _on_start_screen_button_button_up() -> void:
+	button_pressed(false)
+	get_tree().change_scene_to_packed(SHOP)
 
 
-func _on_start_screen_tutorial_button_pressed() -> void:
+
+func _on_start_screen_tutorial_button_button_down() -> void:
+	button_pressed(true)
+
+
+func _on_start_screen_tutorial_button_button_up() -> void:
+	button_pressed(false)
 	get_tree().change_scene_to_packed(load("res://scenes/cutscene_tutorial.tscn"))

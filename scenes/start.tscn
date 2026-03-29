@@ -32,5 +32,7 @@ offset_right = 903.0
 offset_bottom = 213.0
 text = "START SCREEN"
 
-[connection signal="pressed" from="CanvasLayer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/StartScreenButton" to="." method="_on_start_screen_button_pressed"]
+[connection signal="button_down" from="CanvasLayer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_button_down"]
+[connection signal="button_up" from="CanvasLayer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_button_up"]
+[connection signal="button_down" from="CanvasLayer/StartScreenButton" to="." method="_on_start_screen_button_button_down"]
+[connection signal="button_up" from="CanvasLayer/StartScreenButton" to="." method="_on_start_screen_button_button_up"]
