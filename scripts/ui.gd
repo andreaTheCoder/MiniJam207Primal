@@ -12,7 +12,6 @@ const START_TIME = 12
 const END_TIME = 24
 const END_DAY = 7
 @export var time := START_TIME
-@export var day := 0
 @export var score := 0
 
 # Called when the node enters the scene tree for the first time.
@@ -59,15 +58,15 @@ func set_time():
 	time_label.text = time_text
 
 func set_day():
-	var day_text = "Day: " + str(day)
+	var day_text = "Day: " + str(Global.day)
 	day_label.text = day_text
 
 func a_new_day():
 	await fade.fade(1, 2.5).finished
-	if day < END_DAY:
+	if Global.day < END_DAY:
 		time = START_TIME
 		set_time()
-		day += 1
+		Global.day += 1
 		set_day()
 		Global.potion.potion_liquid.hide()
 		for orders in Global.orders:

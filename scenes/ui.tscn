@@ -6,6 +6,9 @@
 
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
 script = ExtResource("1_x4jx1")
+time = null
+day = null
+score = null
 
 [node name="Panel" type="Panel" parent="." unique_id=1760701443]
 visible = false

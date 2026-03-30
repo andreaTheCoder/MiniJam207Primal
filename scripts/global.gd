@@ -8,6 +8,7 @@ enum INGREDIENTS
 	DRIED_BLURPLEBERRY,
 	DRAGONS_BREATH
 }	
+@export var day := 1
 var orders = []
 const POTION_HOME = Vector2(0,0)
 var mouse_dragging_item = null
