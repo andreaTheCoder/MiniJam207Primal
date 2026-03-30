@@ -7,8 +7,11 @@ visible = false
 script = ExtResource("1_nukjo")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1666068042]
-offset_right = 1164.0
-offset_bottom = 670.0
+offset_left = -6888.0
+offset_top = -3661.0
+offset_right = -5724.0
+offset_bottom = -2991.0
+scale = Vector2(53.94, 53.94)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true

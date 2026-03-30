@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cve6201jmyx3d" path="res://scenes/ticket_panel.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://bt6e6iikcm33m" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="PackedScene" uid="uid://rum3vmvj1k1p" path="res://scenes/newspaper.tscn" id="2_gdt2y"]
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="3_yev5y"]
 
 [node name="Ui" type="CanvasLayer" unique_id=340363726]
@@ -74,7 +75,7 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Time: 10:00"
 
 [node name="Timer" type="Timer" parent="Time Label" unique_id=350988001]
-wait_time = 0.75
+wait_time = 3.0
 autostart = true
 
 [node name="VerticalTextBubbleContainer" type="VBoxContainer" parent="." unique_id=1476992803]
@@ -86,6 +87,8 @@ offset_bottom = 319.0
 theme_override_constants/separation = 20
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_yev5y")]
+offset = Vector2(700, 550)
+transform = Transform2D(1, 0, 0, 1, 700, 550)
 
 [node name="Day Counter" type="RichTextLabel" parent="Fade" unique_id=1506106522]
 visible = false
@@ -98,5 +101,21 @@ theme_override_font_sizes/normal_font_size = 100
 text = "Day: 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="newspaper" parent="Fade" unique_id=586587876 instance=ExtResource("2_gdt2y")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.81, 0.81)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [connection signal="timeout" from="Time Label/Timer" to="." method="_on_timer_timeout"]

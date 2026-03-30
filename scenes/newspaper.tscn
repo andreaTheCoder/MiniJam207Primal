@@ -1,17 +1,6 @@
 [gd_scene format=3 uid="uid://rum3vmvj1k1p"]
 
 [ext_resource type="Script" uid="uid://bxcvx6xsaorri" path="res://scenes/newspaper.gd" id="1_o430b"]
-[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="2_58k2v"]
 
-[node name="newspaper" type="Node2D" unique_id=965549165 node_paths=PackedStringArray("sprite")]
+[node name="newspaper" type="TextureRect" unique_id=586587876]
 script = ExtResource("1_o430b")
-sprite = NodePath("CanvasLayer/TutorialImage")
-
-[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("2_58k2v")]
-layer = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1232120192]
-
-[node name="TutorialImage" type="Sprite2D" parent="CanvasLayer" unique_id=1665876256]
-position = Vector2(578.4445, 331.875)
-scale = Vector2(0.60682863, 0.61319435)

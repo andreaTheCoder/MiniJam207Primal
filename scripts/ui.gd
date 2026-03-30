@@ -8,14 +8,14 @@ const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
-@export var newspaper_ref: Node2D
+@export var newspaper_ref: TextureRect
 const BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
 
 # Called when the node enters the scene tree for the first time.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	newspaper_ref.sprite.hide()
+	newspaper_ref.hide()
 	AudioPlayer.play_music(BGM, -10, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
@@ -63,6 +63,7 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
+	newspaper_ref.show() 
 	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		Global.time = Global.START_TIME
@@ -78,10 +79,11 @@ func a_new_day():
 		day_counter.show()
 		day_counter.text = "Day: "
 		day_counter.text += str(Global.day)
-		newspaper_ref.sprite.show() 
+
 		await get_tree().create_timer(5).timeout
 		var tweener = get_tree().create_tween()
 		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
+		newspaper_ref.hide()
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
