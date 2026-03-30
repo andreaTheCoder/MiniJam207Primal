@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var start_screen_tutorial_button: Button = $CanvasLayer/StartScreenTutorialButton
-@onready var start_screen_button: Button = $CanvasLayer/StartScreenButton
+@onready var start_screen_tutorial_button: Button = $CanvasLayer/VBoxContainer/StartScreenTutorialButton
+@onready var start_screen_button: Button = $CanvasLayer/VBoxcontainer/StartScreenButton
 const SHOP = preload("res://scenes/shop.tscn")
 
 # Called when the node enters the scene tree for the first time.
