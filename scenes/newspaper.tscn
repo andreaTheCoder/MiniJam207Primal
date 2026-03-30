@@ -15,10 +15,3 @@ layer = 2
 [node name="TutorialImage" type="Sprite2D" parent="CanvasLayer" unique_id=1665876256]
 position = Vector2(578.4445, 331.875)
 scale = Vector2(0.60682863, 0.61319435)
-
-[node name="ClickToContinueLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1833160664]
-offset_left = 495.0
-offset_top = 601.0
-offset_right = 751.0
-offset_bottom = 656.0
-text = "Click to continue"
