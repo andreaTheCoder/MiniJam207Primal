@@ -5,7 +5,7 @@ const BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
 var screen_is_start_screen := true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioPlayer.play_music(BGM, 0, true)
+	AudioPlayer.play_music(BGM, -5, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
