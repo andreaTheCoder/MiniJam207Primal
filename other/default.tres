@@ -48,6 +48,11 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iixvo"]
 bg_color = Color(0.8434387, 0.80671364, 0.66734326, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [resource]
 default_font = ExtResource("1_w2jdw")
