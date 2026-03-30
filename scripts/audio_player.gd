@@ -12,7 +12,8 @@ const BUTTON_UP = preload("res://audio/click_003.ogg")
 const ERROR = preload("res://audio/error_008.ogg")
 const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
 const DROPPED_IN_POTION = preload("res://audio/maximize_008.ogg")
-
+func _ready():
+	EventBus.button_pressed.connect(_button_pressed)
 func play_sfx(Stream, Volume, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
@@ -45,4 +46,10 @@ func play_music(Stream, Volume, Loop):
 		current_player = musicPlayer
 		await musicPlayer.finished
 	musicPlayer.queue_free()
-	
+
+
+func _button_pressed(isDown):
+	if isDown:
+		play_sfx(BUTTON_DOWN, 15)
+	else:
+		play_sfx(BUTTON_UP, 15)

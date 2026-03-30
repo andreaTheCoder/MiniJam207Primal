@@ -11,7 +11,7 @@ enum INGREDIENTS
 const START_TIME = 12
 const END_TIME = 24
 const END_DAY = 7
-@export var day := 6
+@export var day := 1
 @export var time := START_TIME
 @export var score := 0
 var orders = []

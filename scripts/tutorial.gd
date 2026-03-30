@@ -78,6 +78,11 @@ func loadIndexItems(index, is_fading: bool):
 		tutorial_sprite.texture = load(tutorial_data[index]["image_path"])
 
 func _on_start_button_pressed() -> void:
+	EventBus.button_pressed.emit(false)
 	await fade.fade(1, 2.0).finished
 	print("Starting game, from tutorial cutscene")
 	get_tree().change_scene_to_packed(Global.SHOP)
+
+
+func _on_start_button_button_down() -> void:
+	EventBus.button_pressed.emit(true)

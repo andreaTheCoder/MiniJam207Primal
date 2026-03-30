@@ -1,7 +1,6 @@
 extends Node2D
 
 const BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
-var screen_is_start_screen := true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioPlayer.play_music(BGM, -5, true)
@@ -9,29 +8,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-
-
-func button_pressed(isDown):
-	if isDown:
-		AudioPlayer.play_sfx(AudioPlayer.BUTTON_DOWN, 15)
-	else:
-		AudioPlayer.play_sfx(AudioPlayer.BUTTON_UP, 15)
-
+	
+	
 func _on_start_screen_button_button_down() -> void:
-	button_pressed(true)
+	EventBus.button_pressed.emit(true)
 
-func _on_start_screen_button_button_up() -> void:
-	button_pressed(false)
-	screen_is_start_screen = false
-	get_tree().change_scene_to_packed(Global.SHOP)
+func _on_start_screen_button_pressed() -> void:
+	EventBus.button_pressed.emit(false)
+	get_tree().change_scene_to_packed(load("res://scenes/shop.tscn"))
 
 
 
 func _on_start_screen_tutorial_button_button_down() -> void:
-	button_pressed(true)
+	EventBus.button_pressed.emit(true)
 
-
-func _on_start_screen_tutorial_button_button_up() -> void:
-	button_pressed(false)
+func _on_start_screen_tutorial_button_pressed() -> void:
+	EventBus.button_pressed.emit(false)
 	get_tree().change_scene_to_packed(load("res://scenes/cutscene_tutorial.tscn"))
-	screen_is_start_screen = false

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csvy6j1g2wm1o" path="res://scripts/news.gd" id="1_yfdcv"]
 [ext_resource type="Texture2D" uid="uid://dlwedck4jkrkn" path="res://art/News 7.png" id="2_ft71n"]
+[ext_resource type="Theme" uid="uid://dn4leoiqtpx61" path="res://other/default.tres" id="3_bqk8j"]
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="3_ft71n"]
 
 [node name="News" type="Node2D" unique_id=1949104952]
@@ -19,6 +20,7 @@ offset_left = 535.0
 offset_top = 43.0
 offset_right = 1133.0
 offset_bottom = 639.0
+theme = ExtResource("3_bqk8j")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 35
 text = "You killed ___ people"
@@ -33,6 +35,7 @@ offset_left = 694.0
 offset_top = 514.0
 offset_right = 907.0
 offset_bottom = 629.0
+theme = ExtResource("3_bqk8j")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "restart"

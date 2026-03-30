@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dl6fsltd4e43y" path="res://scripts/tutorial.gd" id="1_a6fc2"]
 [ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="2_a6fc2"]
 [ext_resource type="Texture2D" uid="uid://db0m4ahsktrut" path="res://art/tutorial/1.PNG" id="3_4lcpb"]
+[ext_resource type="Theme" uid="uid://dn4leoiqtpx61" path="res://other/default.tres" id="4_n54xe"]
 
 [node name="CutsceneTutorial" type="Node2D" unique_id=965549165]
 script = ExtResource("1_a6fc2")
@@ -34,12 +35,17 @@ offset_right = 751.0
 offset_bottom = 656.0
 text = "Click to continue"
 
-[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=255640173]
-visible = false
-offset_left = 393.0
-offset_top = 319.0
-offset_right = 757.0
-offset_bottom = 456.0
-text = "START GAME :D"
+[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1554898142]
+offset_left = 328.0
+offset_top = 405.00003
+offset_right = 541.0
+offset_bottom = 520.0
+scale = Vector2(2.09, 2.09)
+theme = ExtResource("4_n54xe")
+theme_override_font_sizes/font_size = 60
+text = "Start"
+flat = true
+expand_icon = true
 
+[connection signal="button_down" from="CanvasLayer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doflbbslrxowa"
-path="res://.godot/imported/News2.png-e79a41b668d458c86d4aa711946ab729.ctex"
+uid="uid://bso4s7da6w1v4"
+path="res://.godot/imported/News 1.png-5b4519a0a28186295e0bed6ab2a839c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/News2.png"
-dest_files=["res://.godot/imported/News2.png-e79a41b668d458c86d4aa711946ab729.ctex"]
+source_file="res://art/News 1.png"
+dest_files=["res://.godot/imported/News 1.png-5b4519a0a28186295e0bed6ab2a839c6.ctex"]
 
 [params]
 
