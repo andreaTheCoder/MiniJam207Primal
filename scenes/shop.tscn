@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ckxxx2f8cya88" path="res://scenes/potion.tscn" id="2_xfvoa"]
 [ext_resource type="PackedScene" uid="uid://c5kyrky6qutu8" path="res://scenes/tray.tscn" id="3_032fp"]
 [ext_resource type="Texture2D" uid="uid://drpnfc6b4n8gt" path="res://art/shop_background.png" id="5_2fc2m"]
+[ext_resource type="PackedScene" uid="uid://rum3vmvj1k1p" path="res://scenes/newspaper.tscn" id="5_8r1wq"]
 
 [node name="shop" type="Node2D" unique_id=404250698]
 
-[node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_lx5au")]
+[node name="ui" parent="." unique_id=1764728883 node_paths=PackedStringArray("newspaper_ref") instance=ExtResource("1_lx5au")]
+newspaper_ref = NodePath("../newspaper")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
@@ -30,6 +32,8 @@ color = Color(0, 0, 0, 0.24313726)
 position = Vector2(0, 40)
 scale = Vector2(1, 1)
 texture = null
+
+[node name="newspaper" parent="." unique_id=965549165 instance=ExtResource("5_8r1wq")]
 
 [node name="Homes" type="Node" parent="." unique_id=533110677]
 

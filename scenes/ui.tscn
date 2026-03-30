@@ -74,7 +74,7 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Time: 10:00"
 
 [node name="Timer" type="Timer" parent="Time Label" unique_id=350988001]
-wait_time = 3.0
+wait_time = 0.75
 autostart = true
 
 [node name="VerticalTextBubbleContainer" type="VBoxContainer" parent="." unique_id=1476992803]

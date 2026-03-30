@@ -8,9 +8,10 @@ const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
-
+@export var newspaper_ref: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	newspaper_ref.visible =false
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
@@ -57,6 +58,7 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
+	
 	await fade.fade(1, 2.5).finished
 	if Global.day < Global.END_DAY:
 		Global.time = Global.START_TIME
