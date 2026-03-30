@@ -57,7 +57,6 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
-	var tweener = get_tree().create_tween()
 	await fade.fade(1, 2.5).finished
 	if Global.day < Global.END_DAY:
 		Global.time = Global.START_TIME
@@ -73,9 +72,11 @@ func a_new_day():
 		day_counter.show()
 		day_counter.text = "Day: "
 		day_counter.text += str(Global.day)
+		var tweener = get_tree().create_tween()
 		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
+	var tweener = get_tree().create_tween()
 	tweener.tween_property(day_counter, "modulate:a", 0, 2.5)
 	await fade.fade(0, 2.5).finished
