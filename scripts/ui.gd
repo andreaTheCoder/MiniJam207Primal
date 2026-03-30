@@ -35,7 +35,7 @@ func _add_customer_text():
 	text_bubble_container.add_child(ct)
 	
 func _score_change(order_size):
-	score += order_size
+	score += order_size*100
 	set_score()
 
 	
@@ -61,7 +61,7 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
-	await fade.fade(1, 1.0).finished
+	await fade.fade(1, 2.5).finished
 	if day < END_DAY:
 		time = START_TIME
 		set_time()
@@ -76,4 +76,4 @@ func a_new_day():
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
-	await fade.fade(0, 1.0).finished
+	await fade.fade(0, 2.5).finished
