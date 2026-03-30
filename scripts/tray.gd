@@ -28,7 +28,7 @@ func potion_submit(potionparam, ingredients):
 				Global.orders.remove_at(i)
 				temp.queue_free()
 				potionparam.ingredients.clear()
-				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 15)
+				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 0)
 				Global.customer_happiness = true
 				EventBus.add_customer_text.emit()
 				if Global.orders == []:
@@ -38,6 +38,12 @@ func potion_submit(potionparam, ingredients):
 		potionparam.ingredients.clear()
 	Global.customer_happiness = false
 	EventBus.add_customer_text.emit()
+	order_fail(potionparam)
+
+func order_fail(potion_ref):
+	potion_ref.ingredients.clear()
+	AudioPlayer.play_sfx(AudioPlayer.ERROR, -10)
+	
 func sort_enum_return_as_ints(arr ):
 	var tempArray := []
 	for ingredient in arr:
