@@ -11,7 +11,7 @@ const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @export var newspaper_ref: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	newspaper_ref.visible =false
+	newspaper_ref.sprite.hide()
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
@@ -74,6 +74,8 @@ func a_new_day():
 		day_counter.show()
 		day_counter.text = "Day: "
 		day_counter.text += str(Global.day)
+		newspaper_ref.sprite.show() 
+		await get_tree().create_timer(5).timeout
 		var tweener = get_tree().create_tween()
 		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
 	else:
