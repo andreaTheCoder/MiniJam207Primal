@@ -38,6 +38,7 @@ flat = true
 expand_icon = true
 
 [node name="StartBg" type="Sprite2D" parent="." unique_id=117864839]
+self_modulate = Color(1.3386899, 1.3386899, 1.3386899, 1)
 position = Vector2(580.22217, 329.49997)
 scale = Vector2(0.60648143, 0.60648143)
 texture = ExtResource("2_bodal")
