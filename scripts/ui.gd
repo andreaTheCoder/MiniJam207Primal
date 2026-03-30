@@ -2,6 +2,7 @@ extends CanvasLayer
 @onready var time_label: RichTextLabel = $"Time Label"
 @onready var day_label: RichTextLabel = $"Day Label"
 @onready var score_label: RichTextLabel = $"Score Label"
+@onready var day_counter: RichTextLabel = $"Fade/Day Counter"
 const TICKET_PANEL: PackedScene = preload("res://scenes/ticket_panel.tscn")
 const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
@@ -19,6 +20,7 @@ func _ready() -> void:
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
+	day_counter.modulate.a = 0
 	set_time()
 	set_day()
 
@@ -73,7 +75,12 @@ func a_new_day():
 		Global.orders.clear()
 		Global.potion.ingredients.clear()
 		EventBus.out_of_tickets.emit()
+		day_counter.show()
+		var tweener = get_tree().create_tween()
+		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
+	var tweener = get_tree().create_tween()
+	tweener.tween_property(day_counter, "modulate:a", 0, 2.5)
 	await fade.fade(0, 2.5).finished

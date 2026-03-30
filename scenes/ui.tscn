@@ -57,6 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Day Label" type="RichTextLabel" parent="." unique_id=1768498442]
+visible = false
 offset_left = 824.0
 offset_top = -1.0
 offset_right = 961.0
@@ -65,18 +66,16 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Day: 0"
 
 [node name="Time Label" type="RichTextLabel" parent="." unique_id=1714952886]
-offset_left = 823.0
-offset_top = 84.0
-offset_right = 1138.0
-offset_bottom = 165.0
+offset_left = 903.0
+offset_top = -2.0
+offset_right = 1218.0
+offset_bottom = 79.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Time: 10:00"
 
 [node name="Timer" type="Timer" parent="Time Label" unique_id=350988001]
 wait_time = 3.0
 autostart = true
-
-[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_yev5y")]
 
 [node name="VerticalTextBubbleContainer" type="VBoxContainer" parent="." unique_id=1476992803]
 custom_minimum_size = Vector2(10, 10)
@@ -85,5 +84,19 @@ offset_top = 246.0
 offset_right = 1127.0
 offset_bottom = 319.0
 theme_override_constants/separation = 20
+
+[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_yev5y")]
+
+[node name="Day Counter" type="RichTextLabel" parent="Fade" unique_id=1506106522]
+visible = false
+offset_left = 297.0
+offset_top = 220.0
+offset_right = 855.0
+offset_bottom = 428.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "Day: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Time Label/Timer" to="." method="_on_timer_timeout"]
