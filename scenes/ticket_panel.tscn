@@ -13,10 +13,10 @@ script = ExtResource("1_l6550")
 [node name="Panel" type="MarginContainer" parent="." unique_id=2130206671]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="Label" type="Label" parent="Panel" unique_id=128318875]
 layout_mode = 2
