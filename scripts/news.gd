@@ -13,7 +13,7 @@ func _ready() -> void:
 		Text.text += str(int(float(Global.score)/200))
 		Text.text += " people and your shop got shut down."
 	else:
-		Text.text = "You have not made a single potion that the landlords around you have gotten fed up with this unused land, thus they convict you of murder and shuts you down."
+		Text.text = "Your store has not made a single cent, making others wonder why you even own that land in the first place. They decide to convict you for murder and shut you down to claim the property."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +24,6 @@ func _process(_delta: float) -> void:
 func _on_restart_button_button_down() -> void:
 	EventBus.button_pressed.emit(true)
 
-func _on_restart_button_button_up() -> void:
+func _on_restart_button_pressed() -> void:
 	EventBus.button_pressed.emit(false)
 	get_tree().change_scene_to_packed(START)

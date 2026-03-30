@@ -2,7 +2,6 @@ extends CanvasLayer
 @onready var time_label: RichTextLabel = $"Time Label"
 @onready var day_label: RichTextLabel = $"Day Label"
 @onready var score_label: RichTextLabel = $"Score Label"
-@onready var day_counter: RichTextLabel = $"Fade/Day Counter"
 const TICKET_PANEL: PackedScene = preload("res://scenes/ticket_panel.tscn")
 const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
@@ -15,12 +14,10 @@ const BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	newspaper_ref.hide()
 	AudioPlayer.play_music(BGM, -10, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
-	day_counter.modulate.a = 0
 	newspaper_ref.modulate.a = 0
 	set_time()
 	set_day()
@@ -41,8 +38,8 @@ func _score_change(order_size):
 	Global.score += order_size*100
 	set_score()
 
-	
-	
+
+
 
 func _on_timer_timeout() -> void:
 	if Global.time < Global.END_TIME:
@@ -67,22 +64,10 @@ func a_new_day():
 	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		EventBus.day_end.emit()
-		newspaper_ref.show()
+		clear_and_create_orders()
 		var tweener = get_tree().create_tween()
 		await tweener.tween_property(newspaper_ref, "modulate:a", 1, 1).finished
-		Global.potion.potion_liquid.hide()
-		for orders in Global.orders:
-			orders.queue_free()
-		Global.orders.clear()
-		Global.potion.ingredients.clear()
-		EventBus.out_of_tickets.emit()
-		day_counter.show()
-		day_counter.text = "Day: "
-		day_counter.text += str(Global.day)
 		await get_tree().create_timer(3).timeout
-		var tweened = get_tree().create_tween()
-		await tweened.tween_property(newspaper_ref, "modulate:a", 0, 1).finished
-		newspaper_ref.hide()
 		Global.day += 1
 		set_day()
 		Global.time = Global.START_TIME
@@ -91,5 +76,14 @@ func a_new_day():
 		get_tree().change_scene_to_packed(NEWS)
 		return
 	var thing_that_tweens = get_tree().create_tween()
-	thing_that_tweens.tween_property(day_counter, "modulate:a", 0, 2.5)
+	thing_that_tweens.tween_property(newspaper_ref, "modulate:a", 0, 1)
 	await fade.fade(0, 2.5).finished
+
+
+func clear_and_create_orders():
+	Global.potion.potion_liquid.hide()
+	for orders in Global.orders:
+		orders.queue_free()
+	Global.orders.clear()
+	Global.potion.ingredients.clear()
+	EventBus.out_of_tickets.emit()

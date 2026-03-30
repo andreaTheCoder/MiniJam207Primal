@@ -89,18 +89,6 @@ theme_override_constants/separation = 20
 offset = Vector2(1100, 650)
 transform = Transform2D(1, 0, 0, 1, 1100, 650)
 
-[node name="Day Counter" type="RichTextLabel" parent="Fade" unique_id=1506106522]
-visible = false
-offset_left = 297.0
-offset_top = 220.0
-offset_right = 855.0
-offset_bottom = 428.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 100
-text = "Day: 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="newspaper" parent="Fade" unique_id=586587876 instance=ExtResource("2_gdt2y")]
 anchors_preset = 8
 anchor_left = 0.5

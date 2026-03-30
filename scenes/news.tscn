@@ -24,6 +24,7 @@ theme = ExtResource("3_bqk8j")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 35
 text = "You killed ___ people"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=58647311]
 position = Vector2(268, 319)
@@ -41,8 +42,9 @@ theme_override_font_sizes/font_size = 60
 text = "restart"
 flat = true
 expand_icon = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_ft71n")]
 
 [connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_button_down"]
-[connection signal="button_up" from="RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
