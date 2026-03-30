@@ -8,7 +8,12 @@ enum INGREDIENTS
 	DRIED_BLURPLEBERRY,
 	DRAGONS_BREATH
 }	
+const START_TIME = 12
+const END_TIME = 24
+const END_DAY = 7
 @export var day := 1
+@export var time := START_TIME
+@export var score := 0
 var orders = []
 const POTION_HOME = Vector2(0,0)
 var mouse_dragging_item = null

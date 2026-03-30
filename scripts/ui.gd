@@ -8,11 +8,6 @@ const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
-const START_TIME = 12
-const END_TIME = 24
-const END_DAY = 7
-@export var time := START_TIME
-@export var score := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,25 +31,25 @@ func _add_customer_text():
 	text_bubble_container.add_child(ct)
 	
 func _score_change(order_size):
-	score += order_size*100
+	Global.score += order_size*100
 	set_score()
 
 	
 	
 
 func _on_timer_timeout() -> void:
-	if time < END_TIME:
-		time += 1
+	if Global.time < Global.END_TIME:
+		Global.time += 1
 		set_time()
 	else:
 		a_new_day()
 
 func set_score():
-	var score_text = "Score: " + str(score)
+	var score_text = "Score: " + str(Global.score)
 	score_label.text = score_text
 
 func set_time():
-	var time_text = "Time: " + str(time) + ":00"
+	var time_text = "Time: " + str(Global.time) + ":00"
 	time_label.text = time_text
 
 func set_day():
@@ -62,9 +57,10 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
+	var tweener = get_tree().create_tween()
 	await fade.fade(1, 2.5).finished
-	if Global.day < END_DAY:
-		time = START_TIME
+	if Global.day < Global.END_DAY:
+		Global.time = Global.START_TIME
 		set_time()
 		Global.day += 1
 		set_day()
@@ -75,11 +71,11 @@ func a_new_day():
 		Global.potion.ingredients.clear()
 		EventBus.out_of_tickets.emit()
 		day_counter.show()
-		var tweener = get_tree().create_tween()
+		day_counter.text = "Day: "
+		day_counter.text += str(Global.day)
 		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
-	var tweener = get_tree().create_tween()
 	tweener.tween_property(day_counter, "modulate:a", 0, 2.5)
 	await fade.fade(0, 2.5).finished
