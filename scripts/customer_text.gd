@@ -7,7 +7,7 @@ const CUSTOMER_THANKS = [
 	"Wowwzas, ",
 	"Yippeee, ",
 	"Awesome, ",
-	"HIHI! ",
+	"Hiya, "
 ]
 const CUSTOMER_POTION_PREFIX = [
 	"this ",
@@ -22,7 +22,7 @@ const CUSTOMER_POTION_NAME = [
 	"brew ",
 	"concoction ",
 	"mixture ",
-	"magical water"
+	"magical liquid "
 ]
 const CUSTOMER_SAYING = [
 	"will be very useful for my evil plans",
@@ -33,9 +33,9 @@ const CUSTOMER_SAYING = [
 	"could not be more fitting for what I've planned",
 	"is going to help me 'take care' of my clients",
 	"will help me seduce the rat love of my life",
-	"is very helpful, thank you",
+	"is very helpful",
 	"is great",
-	"._.",
+	"will be greatly appreciated by the cult"
 ]
 const CUSTOMER_ENDING = [
 	".",
@@ -53,7 +53,8 @@ const CUSTOMER_COMPLAINT_PREFIX = [
 const CUSTOMER_COMPLAINT_SAYING = [
 	"is not what any of us ordered",
 	"has a terrible glisten to it",
-	"is not on any of your tickets"
+	"is not on any of your tickets",
+	"is so bad that no one here would ever drink that"
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
