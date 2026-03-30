@@ -14,5 +14,5 @@ func _ready() -> void:
 	texture = load(images[Global.day-1]) 
 	
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	texture = load(images[Global.day-1]) 

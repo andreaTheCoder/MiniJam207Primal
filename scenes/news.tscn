@@ -1,10 +1,45 @@
 [gd_scene format=3 uid="uid://32rcwmj8bjge"]
 
-[node name="News" type="Sprite2D" unique_id=1013455888]
+[ext_resource type="Script" uid="uid://csvy6j1g2wm1o" path="res://scripts/news.gd" id="1_yfdcv"]
+[ext_resource type="Texture2D" uid="uid://dlwedck4jkrkn" path="res://art/News 7.png" id="2_ft71n"]
+[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="3_ft71n"]
+
+[node name="News" type="Node2D" unique_id=1949104952]
+script = ExtResource("1_yfdcv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1591796369]
+offset_left = -107.0
+offset_top = -64.0
+offset_right = 1257.0
+offset_bottom = 755.0
+color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=903451442]
-offset_left = 72.0
-offset_top = 164.0
-offset_right = 271.45062
-offset_bottom = 206.88837
-scale = Vector2(2.406611, 4.3135242)
+offset_left = 535.0
+offset_top = 43.0
+offset_right = 1133.0
+offset_bottom = 639.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "You killed ___ people"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58647311]
+position = Vector2(268, 319)
+scale = Vector2(0.53554237, 0.5355424)
+texture = ExtResource("2_ft71n")
+
+[node name="RestartButton" type="Button" parent="." unique_id=582549622]
+offset_left = 694.0
+offset_top = 514.0
+offset_right = 907.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "restart"
+flat = true
+expand_icon = true
+
+[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_ft71n")]
+
+[connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_button_down"]
+[connection signal="button_up" from="RestartButton" to="." method="_on_restart_button_button_up"]
