@@ -83,8 +83,7 @@ custom_minimum_size = Vector2(10, 10)
 offset_left = 629.0
 offset_top = 246.0
 offset_right = 1127.0
-offset_bottom = 346.0
-size_flags_horizontal = 0
+offset_bottom = 319.0
 theme_override_constants/separation = 20
 
 [connection signal="timeout" from="Time Label/Timer" to="." method="_on_timer_timeout"]
