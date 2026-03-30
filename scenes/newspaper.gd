@@ -10,6 +10,6 @@ var images = ["res://art/News1.png", "res://art/News2.png", "res://art/News3.png
 func _ready() -> void:
 
 	top_level = true
-	texture = load(images[Global.day-1])
+	texture = load(images[Global.day-1]) 
 	
 		
