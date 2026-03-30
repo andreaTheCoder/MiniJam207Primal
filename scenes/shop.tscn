@@ -21,12 +21,13 @@ position = Vector2(673, 24)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=983396833]
 offset_left = -155.0
-offset_top = 179.0
+offset_top = 207.0
 offset_right = 153.0
-offset_bottom = 235.1841
+offset_bottom = 263.18408
 color = Color(0, 0, 0, 0.24313726)
 
 [node name="Potion" parent="." unique_id=1206123825 instance=ExtResource("2_xfvoa")]
+position = Vector2(0, 40)
 scale = Vector2(1, 1)
 texture = null
 

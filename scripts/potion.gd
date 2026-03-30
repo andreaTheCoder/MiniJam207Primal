@@ -11,6 +11,7 @@ class_name Potion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	position = Global.POTION_HOME
 	texture = preload("res://art/Empty Bottle.png")
 	potion_liquid.hide()
 	Global.potion = self
