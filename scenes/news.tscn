@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://32rcwmj8bjge"]
 
 [node name="News" type="Sprite2D" unique_id=1013455888]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=903451442]
+offset_left = 72.0
+offset_top = 164.0
+offset_right = 271.45062
+offset_bottom = 206.88837
+scale = Vector2(2.406611, 4.3135242)

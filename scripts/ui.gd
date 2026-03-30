@@ -8,9 +8,11 @@ const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
+const BGM = preload("res://audio/krasnoshchok-background-music-soft-calm-404429.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioPlayer.play_music(BGM, 0, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
