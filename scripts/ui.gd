@@ -21,6 +21,7 @@ func _ready() -> void:
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
 	day_counter.modulate.a = 0
+	newspaper_ref.modulate.a = 0
 	set_time()
 	set_day()
 
@@ -63,11 +64,12 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
+	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		EventBus.day_end.emit()
 		newspaper_ref.show()
-	await fade.fade(1, 1.5).finished
-	if Global.day < Global.END_DAY:
+		var tweener = get_tree().create_tween()
+		await tweener.tween_property(newspaper_ref, "modulate:a", 1, 1).finished
 		Global.potion.potion_liquid.hide()
 		for orders in Global.orders:
 			orders.queue_free()
@@ -78,8 +80,8 @@ func a_new_day():
 		day_counter.text = "Day: "
 		day_counter.text += str(Global.day)
 		await get_tree().create_timer(3).timeout
-		var tweener = get_tree().create_tween()
-		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
+		var tweened = get_tree().create_tween()
+		await tweened.tween_property(newspaper_ref, "modulate:a", 0, 1).finished
 		newspaper_ref.hide()
 		Global.day += 1
 		set_day()
@@ -88,6 +90,6 @@ func a_new_day():
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
-	var tweener = get_tree().create_tween()
-	tweener.tween_property(day_counter, "modulate:a", 0, 2.5)
+	var thing_that_tweens = get_tree().create_tween()
+	thing_that_tweens.tween_property(day_counter, "modulate:a", 0, 2.5)
 	await fade.fade(0, 2.5).finished

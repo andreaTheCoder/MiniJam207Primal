@@ -76,14 +76,3 @@ func convert_ingredient_names(ingredient:INGREDIENTS):
 			return "Dried Blurpleberry"
 		INGREDIENTS.DRAGONS_BREATH:
 			return "Dragon's Breath"
-
-func convert_ingredient_cs(ingredient:INGREDIENTS):
-	match ingredient:
-		INGREDIENTS.FAIRY_WINGS:
-			return "Fairy Wings"
-		INGREDIENTS.ALLIGATOR_TEARS:
-			return "Alligator Tears"
-		INGREDIENTS.DRIED_BLURPLEBERRY:
-			return "Dried Blurpleberry"
-		INGREDIENTS.DRAGONS_BREATH:
-			return "Dragon's Breath"

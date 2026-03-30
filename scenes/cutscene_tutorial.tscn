@@ -36,6 +36,7 @@ offset_bottom = 656.0
 text = "Click to continue"
 
 [node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1554898142]
+visible = false
 offset_left = 328.0
 offset_top = 405.00003
 offset_right = 541.0

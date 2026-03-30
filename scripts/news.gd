@@ -8,9 +8,12 @@ const START = preload("res://scenes/start.tscn")
 func _ready() -> void:
 	Fade.fade(1, 0)
 	Fade.fade(0, 1)
-	Text.text = "All the crimes got traced back to you, with you killing "
-	Text.text += str(int(Global.score/200))
-	Text.text += " people and your shop got shut down."
+	if Global.score != 0:
+		Text.text = "All the crimes got traced back to you, with you killing "
+		Text.text += str(int(float(Global.score)/200))
+		Text.text += " people and your shop got shut down."
+	else:
+		Text.text = "You have not made a single potion that the landlords around you have gotten fed up with this unused land, thus they convict you of murder and shuts you down."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
