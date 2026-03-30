@@ -11,12 +11,15 @@ const BUTTON_DOWN = preload("res://audio/click_002.ogg")
 const BUTTON_UP = preload("res://audio/click_003.ogg")
 const ERROR = preload("res://audio/error_008.ogg")
 const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
+const DROPPED_IN_POTION = preload("res://audio/maximize_008.ogg")
 
-func play_sfx(Stream, Volume):
+
+func play_sfx(Stream, Volume, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
 	fx.name = "audio effects player"
 	fx.volume_db = Volume
+	fx.pitch_scale = pitch
 	add_child(fx)
 	fx.play()
 	await fx.finished
