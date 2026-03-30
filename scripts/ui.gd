@@ -76,7 +76,7 @@ func a_new_day():
 		get_tree().change_scene_to_packed(NEWS)
 		return
 	var thing_that_tweens = get_tree().create_tween()
-	thing_that_tweens.tween_property(newspaper_ref, "modulate:a", 0, 1)
+	thing_that_tweens.tween_property(newspaper_ref, "modulate:a", 0, 2)
 	await fade.fade(0, 2.5).finished
 
 

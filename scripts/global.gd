@@ -30,41 +30,43 @@ func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tw
 	tweener.set_ease(ease_type)
 	tweener.tween_property(object, "scale", target_scale, duration)
 	return tweener
-	
+
 const HOME_BREW = {
 	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRIED_BLURPLEBERRY],
 	"name" : "Home Brew"
-}
-const BLURPLE_JUICE = {
-	"ingredients" : [INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.DRIED_BLURPLEBERRY],
-	"name" : "Blurple Juice"
-}
-
-const POTION_OF_HEEL = {
-	"ingredients" : [INGREDIENTS.FAIRY_WINGS, INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.ALLIGATOR_TEARS],
-	"name" : "Potion of Heel"
-}
-const POISONOUS_POISON = {
-	"ingredients" : [INGREDIENTS.DRAGONS_BREATH, INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS],
-	"name" : "Poisonous Poison"
-}
-const POTION_OF_TATTLE = {
-	"ingredients" : [INGREDIENTS.DRAGONS_BREATH, INGREDIENTS.FAIRY_WINGS],
-	"name" : "Potion of Tattle"
-}
-const MELANCHOLY_SLURPEE = {
-	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS],
-	"name" : "Melancholy Slurpee"
 }
 const SILLY_SMOOTHIE = {
 	"ingredients" : [INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.FAIRY_WINGS],
 	"name" : "Silly Smoothie"
 }
+const POTION_OF_TATTLE = {
+	"ingredients" : [INGREDIENTS.DRAGONS_BREATH, INGREDIENTS.FAIRY_WINGS],
+	"name" : "Potion of Tattle"
+}
+const STINK_BOMB = {
+	"ingredients" : [INGREDIENTS.DRAGONS_BREATH, INGREDIENTS.DRIED_BLURPLEBERRY],
+	"name" : "Stink Bomb"
+}
+const BLURPLE_JUICE = {
+	"ingredients" : [INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.DRIED_BLURPLEBERRY],
+	"name" : "Blurple Juice"
+}
+const POTION_OF_HEEL = {
+	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.FAIRY_WINGS],
+	"name" : "Potion of Heel"
+}
+const POISONOUS_POISON = {
+	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRAGONS_BREATH],
+	"name" : "Poisonous Poison"
+}
+const MELANCHOLY_SLURPEE = {
+	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.ALLIGATOR_TEARS],
+	"name" : "Melancholy Slurpee"
+}
 const THE_FORBIDDEN_MIXTURE = {
 	"ingredients" : [INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.FAIRY_WINGS, INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRAGONS_BREATH],
 	"name" : "Forbidden Mixture"
 }
-
 const POTIONS := [HOME_BREW, BLURPLE_JUICE, POTION_OF_HEEL, POISONOUS_POISON, POTION_OF_TATTLE, MELANCHOLY_SLURPEE, SILLY_SMOOTHIE, THE_FORBIDDEN_MIXTURE]
 func convert_ingredient_names(ingredient:INGREDIENTS):
 	match ingredient:
