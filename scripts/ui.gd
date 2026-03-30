@@ -68,7 +68,6 @@ func a_new_day():
 	if Global.day < Global.END_DAY:
 		Global.time = Global.START_TIME
 		set_time()
-		Global.day += 1
 		set_day()
 		Global.potion.potion_liquid.hide()
 		for orders in Global.orders:
@@ -80,10 +79,11 @@ func a_new_day():
 		day_counter.text = "Day: "
 		day_counter.text += str(Global.day)
 
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(3).timeout
 		var tweener = get_tree().create_tween()
 		await tweener.tween_property(day_counter, "modulate:a", 1, 2).finished
 		newspaper_ref.hide()
+		Global.day += 1
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
