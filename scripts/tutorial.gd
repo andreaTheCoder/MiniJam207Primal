@@ -27,7 +27,7 @@ var tutorial_data : Array = [
 		"image_path":"res://art/tutorial/4.PNG"
 	},
 	{
-		"text":"Drag the ingridients to the potion to add them in",
+		"text":"Drag the ingredients to the potion to add them in",
 		"image_path":"res://art/tutorial/5.PNG"
 	},
 	{
@@ -39,7 +39,7 @@ var tutorial_data : Array = [
 		"image_path":"res://art/tutorial/7.PNG"
 	},
 	{
-		"text":"",
+		"text":"This game is best played in fullscreen",
 		"image_path":"res://art/tutorial/8.PNG"
 	},
 ]
