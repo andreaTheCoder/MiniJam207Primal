@@ -9,7 +9,7 @@ extends Node2D
 # simultaneously
 const BUTTON_DOWN = preload("res://audio/click_002.ogg")
 const BUTTON_UP = preload("res://audio/click_003.ogg")
- 
+const ERROR = preload("res://audio/error_008.ogg")
 const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
 
 func play_sfx(Stream, Volume):

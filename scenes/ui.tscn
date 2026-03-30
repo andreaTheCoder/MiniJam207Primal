@@ -68,4 +68,13 @@ autostart = true
 
 [node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_yev5y")]
 
+[node name="VerticalTextBubbleContainer" type="VBoxContainer" parent="." unique_id=1476992803]
+custom_minimum_size = Vector2(10, 10)
+offset_left = 629.0
+offset_top = 190.0
+offset_right = 1127.0
+offset_bottom = 290.0
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
 [connection signal="timeout" from="Time Label/Timer" to="." method="_on_timer_timeout"]
