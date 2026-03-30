@@ -28,7 +28,8 @@ func potion_submit(potionparam, ingredients):
 				Global.orders.remove_at(i)
 				temp.queue_free()
 				potionparam.ingredients.clear()
-				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, -10)
+				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 0)
+				EventBus.add_customer_text.emit()
 				if Global.orders == []:
 					EventBus.out_of_tickets.emit()
 				return

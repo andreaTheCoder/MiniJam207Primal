@@ -20,17 +20,18 @@ texture = ExtResource("3_4lcpb")
 [node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1700390402]
 offset_left = 59.0
 offset_top = 38.0
-offset_right = 786.0
-offset_bottom = 94.0
+offset_right = 1100.0
+offset_bottom = 143.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
 text = "dashkfkjdhs"
 
 [node name="ClickToContinueLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1833160664]
-offset_left = 885.0
-offset_top = 549.0
-offset_right = 1141.0
-offset_bottom = 604.0
+offset_left = 495.0
+offset_top = 601.0
+offset_right = 751.0
+offset_bottom = 656.0
 text = "Click to continue"
 
 [node name="StartButton" type="Button" parent="CanvasLayer" unique_id=255640173]
