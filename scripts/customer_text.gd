@@ -7,6 +7,7 @@ const CUSTOMER_THANKS = [
 	"Wowwzas, ",
 	"Yippeee, ",
 	"Awesome, ",
+	"HIHI! ",
 ]
 const CUSTOMER_POTION_PREFIX = [
 	"this ",
@@ -20,15 +21,21 @@ const CUSTOMER_POTION_NAME = [
 	"drink ",
 	"brew ",
 	"concoction ",
-	"mixture "
+	"mixture ",
+	"magical water"
 ]
 const CUSTOMER_SAYING = [
-	"will be very useful for my evil plains",
+	"will be very useful for my evil plans",
 	"will help my family immensely",
 	"won't be used for any nefarious purpose",
 	"will be used only for good, trust me",
 	"has great potential for destruction",
-	"could not be more fitting for what I've planned"
+	"could not be more fitting for what I've planned",
+	"is going to help me 'take care' of my clients",
+	"will help me seduce the rat love of my life",
+	"is very helpful, thank you",
+	"is great",
+	"._.",
 ]
 const CUSTOMER_ENDING = [
 	".",
