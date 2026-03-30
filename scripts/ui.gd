@@ -47,8 +47,8 @@ func _on_timer_timeout() -> void:
 	if Global.time < Global.END_TIME:
 		Global.time += 1
 		set_time()
-	else:
-		a_new_day()
+		if Global.time >= 24:
+			a_new_day()
 
 func set_score():
 	var score_text = "Score: " + str(Global.score)
@@ -63,8 +63,7 @@ func set_day():
 	day_label.text = day_text
 
 func a_new_day():
-	
-	await fade.fade(1, 2.5).finished
+	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		Global.time = Global.START_TIME
 		set_time()
