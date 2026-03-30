@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 				dragging = false
 				if is_inside_droppable:
 					var random_pitch = randf_range(.5, 2)
-					AudioPlayer.play_sfx(AudioPlayer.DROPPED_IN_POTION, -20, random_pitch)
+					AudioPlayer.play_sfx(AudioPlayer.DROPPED_IN_POTION, 0, random_pitch)
 					area_ref.ingredients.append(type)
 					print("Potion")
 					print(area_ref.ingredients)

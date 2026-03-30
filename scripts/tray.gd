@@ -42,7 +42,7 @@ func potion_submit(potionparam, ingredients):
 
 func order_fail(potion_ref):
 	potion_ref.ingredients.clear()
-	AudioPlayer.play_sfx(AudioPlayer.ERROR, -10)
+	AudioPlayer.play_sfx(AudioPlayer.ERROR, 0)
 	
 func sort_enum_return_as_ints(arr ):
 	var tempArray := []
