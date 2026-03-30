@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5t0l5ku7dbq5"
+path="res://.godot/imported/Potion Shop BG Music #1.mp3-422899d2d3106c17312d45fcdb0a13fb.mp3str"
+
+[deps]
+
+source_file="res://audio/Potion Shop BG Music #1.mp3"
+dest_files=["res://.godot/imported/Potion Shop BG Music #1.mp3-422899d2d3106c17312d45fcdb0a13fb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

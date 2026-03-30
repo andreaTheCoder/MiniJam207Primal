@@ -13,7 +13,6 @@ const ERROR = preload("res://audio/error_008.ogg")
 const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
 const DROPPED_IN_POTION = preload("res://audio/maximize_008.ogg")
 
-
 func play_sfx(Stream, Volume, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
@@ -28,8 +27,7 @@ func play_sfx(Stream, Volume, pitch = 1.0):
 
 var current_player = null
 
-func play_music(Stream, Volume):
-
+func play_music(Stream, Volume, Loop):
 	if current_player:
 		if Stream == current_player.stream:
 			return
@@ -42,6 +40,9 @@ func play_music(Stream, Volume):
 	musicPlayer.play()
 	current_player = musicPlayer
 	await musicPlayer.finished
-
+	while Loop:
+		musicPlayer.play()
+		current_player = musicPlayer
+		await musicPlayer.finished
 	musicPlayer.queue_free()
 	

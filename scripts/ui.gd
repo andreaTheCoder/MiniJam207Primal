@@ -9,9 +9,14 @@ const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
 @export var newspaper_ref: Node2D
+const BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
+
+# Called when the node enters the scene tree for the first time.
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	newspaper_ref.sprite.hide()
+	AudioPlayer.play_music(BGM, -10, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
