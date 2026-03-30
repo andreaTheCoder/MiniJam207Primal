@@ -33,16 +33,16 @@ texture = null
 [node name="Homes" type="Node" parent="." unique_id=533110677]
 
 [node name="Ingredient Home4" parent="Homes" unique_id=998149927 instance=ExtResource("2_1l46r")]
-position = Vector2(485, 250)
+position = Vector2(425, 237)
 type = 3
 
 [node name="Ingredient Home3" parent="Homes" unique_id=1265972195 instance=ExtResource("2_1l46r")]
-position = Vector2(235, 249)
+position = Vector2(235, 236)
 type = 2
 
 [node name="Ingredient Home2" parent="Homes" unique_id=556907411 instance=ExtResource("2_1l46r")]
-position = Vector2(-256, 240)
+position = Vector2(-308, 240)
 type = 1
 
 [node name="Ingredient Home" parent="Homes" unique_id=982167561 instance=ExtResource("2_1l46r")]
-position = Vector2(-467, 235)
+position = Vector2(-501, 238)
