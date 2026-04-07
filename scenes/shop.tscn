@@ -18,6 +18,8 @@ offset_right = 971.0
 [node name="Time Label" parent="ui" index="4" unique_id=1714952886]
 offset_left = 803.0
 offset_right = 1150.0
+[node name="Fade" parent="ui" index="6" unique_id=383164694]
+visible = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 

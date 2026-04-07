@@ -14,16 +14,16 @@ func _ready() -> void:
 	match type:
 		Global.INGREDIENTS.FAIRY_WINGS:
 			texture = load("res://art/fairy wings.PNG")
-			potion_tint = Color.PINK
+			potion_tint = Color.HOT_PINK
 		Global.INGREDIENTS.ALLIGATOR_TEARS:
 			texture = load("res://art/alligator tears.PNG")
-			potion_tint = Color.BLACK
+			potion_tint = Color.WEB_GREEN
 		Global.INGREDIENTS.DRIED_BLURPLEBERRY:
 			texture = load("res://art/blurpleberry.PNG")
 			potion_tint = Color.PURPLE
 		Global.INGREDIENTS.DRAGONS_BREATH:
 			texture = load("res://art/dragon's breath.PNG")
-			potion_tint = Color.RED
+			potion_tint = Color.ORANGE
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -44,7 +44,6 @@ func _process(_delta: float) -> void:
 					print(area_ref.ingredients)
 					area_ref.potion_liquid.show()
 					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
-					print(potion_tint)
 					area_ref.potion_liquid.modulate = potion_tint
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
