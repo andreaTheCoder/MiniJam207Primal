@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckxxx2f8cya88"]
 
 [ext_resource type="Script" uid="uid://bvpouoppxum5b" path="res://scripts/potion.gd" id="2_itmmj"]
-[ext_resource type="Texture2D" uid="uid://dvshgndvd7ffj" path="res://art/water..png" id="2_le10y"]
+[ext_resource type="Texture2D" uid="uid://drpbt0enxiu68" path="res://art/potion_liquid.png" id="2_le10y"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_itmmj"]
 load_path = "res://.godot/imported/Empty Bottle.png-0a83d7d591ed5be4467a979b8b802733.ctex"
@@ -28,7 +28,7 @@ color = Color(0.5058824, 0.61960787, 0.654902, 1)
 polygon = PackedVector2Array(113.63635, 127.27271, 78.78787, 174.24242, -81.81818, 172.72726, -131.81818, 83.33333, -68.18181, -21.21212, 27.272724, -33.333332, 93.939384, 21.21212)
 
 [node name="Potion Liquid" type="Sprite2D" parent="." unique_id=1746788152]
-position = Vector2(-6.060606, 93.93939)
+position = Vector2(-6.060606, 7.5757575)
 scale = Vector2(0.935, 0.935)
 texture = ExtResource("2_le10y")
 

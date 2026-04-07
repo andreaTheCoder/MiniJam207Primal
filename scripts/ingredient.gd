@@ -8,18 +8,23 @@ class_name Ingredient
 @export var leftHome := false
 @export var is_inside_droppable := false
 @export var area_ref = null
-
+@export var potion_tint : Color
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	match type:
 		Global.INGREDIENTS.FAIRY_WINGS:
 			texture = load("res://art/fairy wings.PNG")
+			potion_tint = Color.PINK
 		Global.INGREDIENTS.ALLIGATOR_TEARS:
 			texture = load("res://art/alligator tears.PNG")
+			potion_tint = Color.BLACK
 		Global.INGREDIENTS.DRIED_BLURPLEBERRY:
 			texture = load("res://art/blurpleberry.PNG")
+			potion_tint = Color.PURPLE
 		Global.INGREDIENTS.DRAGONS_BREATH:
 			texture = load("res://art/dragon's breath.PNG")
+			potion_tint = Color.RED
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
@@ -39,6 +44,8 @@ func _process(_delta: float) -> void:
 					print(area_ref.ingredients)
 					area_ref.potion_liquid.show()
 					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
+					print(potion_tint)
+					area_ref.potion_liquid.modulate = potion_tint
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
 				queue_free()
