@@ -11,9 +11,6 @@
 [node name="ui" parent="." unique_id=1764728883 node_paths=PackedStringArray("newspaper_ref") instance=ExtResource("1_lx5au")]
 newspaper_ref = NodePath("Fade/newspaper")
 
-[node name="Fade" parent="ui" index="6" unique_id=383164694]
-visible = true
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
 [node name="ShopBackground" type="Sprite2D" parent="." unique_id=166722271]
@@ -38,7 +35,7 @@ texture = null
 [node name="Homes" type="Node" parent="." unique_id=533110677]
 
 [node name="Ingredient Home4" parent="Homes" unique_id=998149927 instance=ExtResource("2_1l46r")]
-position = Vector2(425, 237)
+position = Vector2(408, 233)
 type = 3
 
 [node name="Ingredient Home3" parent="Homes" unique_id=1265972195 instance=ExtResource("2_1l46r")]
@@ -46,10 +43,10 @@ position = Vector2(235, 236)
 type = 2
 
 [node name="Ingredient Home2" parent="Homes" unique_id=556907411 instance=ExtResource("2_1l46r")]
-position = Vector2(-308, 240)
+position = Vector2(-299, 223)
 type = 1
 
 [node name="Ingredient Home" parent="Homes" unique_id=982167561 instance=ExtResource("2_1l46r")]
-position = Vector2(-501, 238)
+position = Vector2(-471, 226)
 
 [editable path="ui"]
