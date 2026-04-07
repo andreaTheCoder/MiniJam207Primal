@@ -11,6 +11,14 @@
 [node name="ui" parent="." unique_id=1764728883 node_paths=PackedStringArray("newspaper_ref") instance=ExtResource("1_lx5au")]
 newspaper_ref = NodePath("Fade/newspaper")
 
+[node name="Day Label" parent="ui" index="3" unique_id=1768498442]
+offset_left = 834.0
+offset_right = 971.0
+
+[node name="Time Label" parent="ui" index="4" unique_id=1714952886]
+offset_left = 803.0
+offset_right = 1150.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
 [node name="ShopBackground" type="Sprite2D" parent="." unique_id=166722271]
