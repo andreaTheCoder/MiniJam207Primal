@@ -11,6 +11,9 @@
 [node name="ui" parent="." unique_id=1764728883 node_paths=PackedStringArray("newspaper_ref") instance=ExtResource("1_lx5au")]
 newspaper_ref = NodePath("Fade/newspaper")
 
+[node name="Fade" parent="ui" index="6" unique_id=383164694]
+visible = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
 [node name="ShopBackground" type="Sprite2D" parent="." unique_id=166722271]
