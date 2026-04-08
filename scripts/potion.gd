@@ -4,7 +4,7 @@ class_name Potion
 const DEFAULT_POTION_COLOR = Color.SKY_BLUE
 @export var ingredients := []
 @export var draggable := false
-@export var is_inside_droppable := false
+@export var is_inside_tray := false
 @export var total_liquid_color = DEFAULT_POTION_COLOR
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
 const POTION_HOME = Vector2(0,80)
@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 		# behavior when released
 		if Input.is_action_just_released("click"):
 			# released inside tray
-			if is_inside_droppable:
+			if is_inside_tray:
 				reset_liquid_color()
 				EventBus.potion_submitted.emit(self, ingredients)
 			# reset potion
@@ -54,15 +54,16 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	scale = Vector2(1.00, 1.00)
 	draggable = false
-	
+
+# TODO: handle this logic in tray.gd
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Tray:
-		is_inside_droppable = true
+		is_inside_tray = true
 		area.get_parent().scale = Vector2(1.05, 1.05)
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Tray:
-		is_inside_droppable = false
+		is_inside_tray = false
 		area.get_parent().scale = Vector2(1.00, 1.00)
-		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
+		area.get_parent().modulate = Color.WHITE
