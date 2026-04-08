@@ -40,11 +40,8 @@ func _process(_delta: float) -> void:
 					var random_pitch = randf_range(.5, 2)
 					AudioPlayer.play_sfx(AudioPlayer.DROPPED_IN_POTION, 0, random_pitch)
 					area_ref.ingredients.append(type)
-					print("Potion")
-					print(area_ref.ingredients)
-					area_ref.potion_liquid.show()
 					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
-					area_ref.potion_liquid.modulate = potion_tint
+					area_ref.change_liquid_color(potion_tint)
 				Global.mouse_dragging_item = null
 				await Global.tween_scale(Vector2(0,0),self).finished
 				queue_free()
