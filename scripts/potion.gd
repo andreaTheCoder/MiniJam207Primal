@@ -6,7 +6,7 @@ class_name Potion
 @export var draggable := false
 @export var dragging := false
 @export var is_inside_droppable := false
-
+const DEFAULT_LIQUID_COLOR : Color = Color.SKY_BLUE
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
 
 # Called when the node enters the scene tree for the first time.
@@ -32,10 +32,9 @@ func _process(_delta: float) -> void:
 			Global.mouse_dragging_item = null
 			dragging = false
 			global_position = Global.POTION_HOME
-			
 
 func reset_liquid_color():
-	potion_liquid.modulate = Color.SKY_BLUE
+	potion_liquid.modulate = DEFAULT_LIQUID_COLOR
 	
 func change_liquid_color(color_to_change_to : Color):
 	potion_liquid.modulate = color_to_change_to
