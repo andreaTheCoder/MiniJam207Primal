@@ -21,7 +21,7 @@ enum INGREDIENTS
 @export var orders = []
 @export var mouse_dragging_item = null
 @export var customer_happiness := true
-@export var American = true
+@export var Hour_Clock_24 = false
 
 var newspaper
 var potion

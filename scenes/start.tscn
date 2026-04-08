@@ -51,7 +51,7 @@ position = Vector2(554, 252.00002)
 scale = Vector2(0.27398258, 0.2739826)
 texture = ExtResource("3_kdmts")
 
-[node name="American Button" type="Button" parent="." unique_id=17233223]
+[node name="StartScreenSettingsButton" type="Button" parent="." unique_id=17233223]
 offset_left = 956.0
 offset_top = 592.0
 offset_right = 1360.0
@@ -59,7 +59,7 @@ offset_bottom = 707.0
 scale = Vector2(0.48, 0.48)
 theme = ExtResource("2_kdmts")
 theme_override_font_sizes/font_size = 60
-text = "American"
+text = "Settings"
 flat = true
 expand_icon = true
 
@@ -67,5 +67,5 @@ expand_icon = true
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_button_pressed" flags=18]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenStartButton" to="." method="_button_down"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenStartButton" to="." method="_button_pressed" flags=18]
-[connection signal="button_down" from="American Button" to="." method="_button_down"]
-[connection signal="pressed" from="American Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="StartScreenSettingsButton" to="." method="_button_down"]
+[connection signal="pressed" from="StartScreenSettingsButton" to="." method="_button_pressed" flags=18]

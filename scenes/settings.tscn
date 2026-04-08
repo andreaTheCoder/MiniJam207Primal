@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://chx1von1hvh7u"]
+
+[ext_resource type="Script" uid="uid://bgaru8iapicjo" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Texture2D" uid="uid://bs3pgb6omumxi" path="res://art/tutorial/8.PNG" id="2_6wm04"]
+[ext_resource type="Theme" uid="uid://dn4leoiqtpx61" path="res://other/default.tres" id="3_f4mfi"]
+
+[sub_resource type="Theme" id="Theme_es4n0"]
+
+[node name="Settings" type="Node2D" unique_id=1830954702]
+script = ExtResource("1_5p8wc")
+
+[node name="TutorialImage" type="Sprite2D" parent="." unique_id=1287850015]
+position = Vector2(578.4445, 331.875)
+scale = Vector2(0.60682863, 0.61319435)
+texture = ExtResource("2_6wm04")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=560423539]
+offset_left = 440.0
+offset_top = -11.0
+offset_right = 1067.0
+offset_bottom = 50.0
+text = "SETTINGS SCREEN"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2085333744]
+custom_minimum_size = Vector2(300, 0)
+offset_left = 196.0
+offset_top = 14.0
+offset_right = 546.0
+offset_bottom = 662.0
+theme_override_constants/separation = 17
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=932180382]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer" unique_id=1751366109]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer" unique_id=1907862393]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Time Mode"
+horizontal_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="VBoxContainer" unique_id=1445906470]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Arachnaphobia Mode"
+horizontal_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="VBoxContainer" unique_id=744949563]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Hello There"
+horizontal_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="VBoxContainer" unique_id=297911194]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Random Setting #6"
+horizontal_alignment = 1
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="VBoxContainer" unique_id=1751046073]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "Wowie Zowie"
+horizontal_alignment = 1
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="VBoxContainer" unique_id=56146395]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+text = "I've run out of ideas"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=367029549]
+custom_minimum_size = Vector2(300, 0)
+offset_left = 568.0
+offset_top = 14.0
+offset_right = 918.0
+offset_bottom = 662.0
+theme_override_constants/separation = 17
+
+[node name="Music Slider" type="HSlider" parent="VBoxContainer2" unique_id=995516459]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+value = 100.0
+
+[node name="SFX Slider" type="HSlider" parent="VBoxContainer2" unique_id=1597545999]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+value = 100.0
+
+[node name="Time Button" type="Button" parent="VBoxContainer2" unique_id=1844660137]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "American"
+flat = true
+expand_icon = true
+
+[node name="Arachnaphobia Button" type="Button" parent="VBoxContainer2" unique_id=2117603685]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "Off"
+flat = true
+expand_icon = true
+
+[node name="Hi Button" type="Button" parent="VBoxContainer2" unique_id=1358085391]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "Hi"
+flat = true
+expand_icon = true
+
+[node name="Random Button" type="Button" parent="VBoxContainer2" unique_id=820388761]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "Random Button #4"
+flat = true
+expand_icon = true
+
+[node name="Wowie Button" type="Button" parent="VBoxContainer2" unique_id=1870958681]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "SMBW"
+flat = true
+expand_icon = true
+
+[node name="___ Button" type="Button" parent="VBoxContainer2" unique_id=1964221358]
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 2
+theme = SubResource("Theme_es4n0")
+theme_override_font_sizes/font_size = 30
+text = "..."
+flat = true
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="." unique_id=1078207450]
+offset_left = 956.0
+offset_top = 592.0
+offset_right = 1360.0
+offset_bottom = 707.0
+scale = Vector2(0.48, 0.48)
+theme = ExtResource("3_f4mfi")
+theme_override_font_sizes/font_size = 60
+text = "Back "
+flat = true
+expand_icon = true
+
+[connection signal="value_changed" from="VBoxContainer2/Music Slider" to="." method="_slider_value_changed" flags=18]
+[connection signal="value_changed" from="VBoxContainer2/SFX Slider" to="." method="_slider_value_changed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/Time Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/Time Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/Arachnaphobia Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/Arachnaphobia Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/Hi Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/Hi Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/Random Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/Random Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/Wowie Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/Wowie Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="VBoxContainer2/___ Button" to="." method="_button_down"]
+[connection signal="pressed" from="VBoxContainer2/___ Button" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="BackButton" to="." method="_button_down"]
+[connection signal="pressed" from="BackButton" to="." method="_button_pressed" flags=18]

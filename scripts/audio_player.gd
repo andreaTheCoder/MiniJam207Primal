@@ -10,6 +10,8 @@ const START_BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
 const GAME_BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
 
 @export var current_player = null
+@export var Music_Volume_Modifier := 1.0
+@export var SFX_Volume_Modifier := 1.0
 
 func _ready():
 	EventBus.button_pressed.connect(_button_pressed)
@@ -19,7 +21,7 @@ func play_sfx(Stream, Volume, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
 	fx.name = "audio effects player"
-	fx.volume_db = Volume
+	fx.volume_db = Volume * SFX_Volume_Modifier
 	fx.pitch_scale = pitch
 	add_child(fx)
 	fx.play()
@@ -35,7 +37,7 @@ func play_music(Stream, Volume, Loop):
 	var musicPlayer = AudioStreamPlayer.new()
 	musicPlayer.stream = Stream
 	musicPlayer.name = "music player"
-	musicPlayer.volume_db = Volume
+	musicPlayer.volume_db = Volume * Music_Volume_Modifier
 	add_child(musicPlayer)
 	musicPlayer.play()
 	current_player = musicPlayer
