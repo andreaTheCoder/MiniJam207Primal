@@ -11,9 +11,9 @@ class_name Potion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	reset_liquid_color()
 	position = Global.POTION_HOME
 	texture = preload("res://art/Empty Bottle.png")
-	potion_liquid.hide()
 	Global.potion = self
 	
 
@@ -27,13 +27,19 @@ func _process(_delta: float) -> void:
 	else:
 		if Input.is_action_just_released("click"):
 			if is_inside_droppable:
-					potion_liquid.hide()
+					reset_liquid_color()
 					EventBus.potion_submitted.emit(self, ingredients)
 			Global.mouse_dragging_item = null
 			dragging = false
 			global_position = Global.POTION_HOME
 			
+
+func reset_liquid_color():
+	potion_liquid.modulate = Color.SKY_BLUE
 	
+func change_liquid_color(color_to_change_to : Color):
+	potion_liquid.modulate = color_to_change_to
+
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
 	draggable = true
