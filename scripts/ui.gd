@@ -12,7 +12,7 @@ const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @onready var newspaper_ref: TextureRect = $"Fade/newspaper"
 
 func _ready() -> void:
-	AudioPlayer.play_music(AudioPlayer.GAME_BGM, -10, true)
+	AudioPlayer.play_music(AudioPlayer.GAME_BGM, 1, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
@@ -46,7 +46,7 @@ func set_score():
 
 func set_time():
 	var time_text
-	if Global.American:
+	if Global.Hour_Clock_24:
 		if Global.time%12 == 0:
 			time_text = str(12)
 		else:

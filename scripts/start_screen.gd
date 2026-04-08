@@ -5,7 +5,7 @@ extends Node2D
 @onready var settings_button: Button = $StartScreenSettingsButton
 
 func _ready() -> void:
-	AudioPlayer.play_music(AudioPlayer.START_BGM, -5, true)
+	AudioPlayer.play_music(AudioPlayer.START_BGM, 1, true)
 
 func _button_down() -> void:
 	EventBus.button_pressed.emit(true)

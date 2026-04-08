@@ -12,16 +12,16 @@ const GAME_BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
 @export var current_player = null
 @export var Music_Volume_Modifier := 1.0
 @export var SFX_Volume_Modifier := 1.0
-
+#TODO the volume thingy doesn't actually work, since it only modifies the volume, not negates it.
 func _ready():
 	EventBus.button_pressed.connect(_button_pressed)
 
 # multiple sfx can play simultaniously, so they won't get overridden
-func play_sfx(Stream, Volume, pitch = 1.0):
+func play_sfx(Stream, Volume = 5.0, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
 	fx.name = "audio effects player"
-	fx.volume_db = Volume * SFX_Volume_Modifier
+	fx.volume_linear = Volume * SFX_Volume_Modifier
 	fx.pitch_scale = pitch
 	add_child(fx)
 	fx.play()
@@ -37,7 +37,7 @@ func play_music(Stream, Volume, Loop):
 	var musicPlayer = AudioStreamPlayer.new()
 	musicPlayer.stream = Stream
 	musicPlayer.name = "music player"
-	musicPlayer.volume_db = Volume * Music_Volume_Modifier
+	musicPlayer.volume_linear = Volume * Music_Volume_Modifier
 	add_child(musicPlayer)
 	musicPlayer.play()
 	current_player = musicPlayer
@@ -50,6 +50,6 @@ func play_music(Stream, Volume, Loop):
 
 func _button_pressed(isDown):
 	if isDown:
-		play_sfx(BUTTON_DOWN, 15)
+		play_sfx(BUTTON_DOWN)
 	else:
-		play_sfx(BUTTON_UP, 15)
+		play_sfx(BUTTON_UP)
