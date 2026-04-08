@@ -53,7 +53,16 @@ func set_score():
 	score_label.text = score_text
 
 func set_time():
-	var time_text = "Time: " + str(Global.time) + ":00"
+	var time_text = "Time: "
+	if Global.time%12 == 0:
+		time_text += str(12)
+	else:
+		time_text += str(Global.time%12)
+	time_text += ":00 "
+	if Global.time > 11 and Global.time < 24:
+		time_text += "PM"
+	else:
+		time_text += "AM"
 	time_label.text = time_text
 
 func set_day():
