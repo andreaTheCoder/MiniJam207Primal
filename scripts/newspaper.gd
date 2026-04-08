@@ -1,11 +1,10 @@
-
 extends TextureRect
+
 var image = "res://art/News " + str(Global.day) + ".png"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	EventBus.day_end.connect(_newspaper_update)
 	top_level = true
-	print(image)
 	texture = load(image) 
 
 

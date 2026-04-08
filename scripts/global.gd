@@ -7,7 +7,7 @@ enum INGREDIENTS
 	ALLIGATOR_TEARS,
 	DRIED_BLURPLEBERRY,
 	DRAGONS_BREATH
-}	
+}
 const START_TIME = 12
 const END_TIME = 24
 const END_DAY = 7
@@ -20,6 +20,7 @@ var mouse_dragging_item = null
 var potion
 var customer_happiness := true
 var American = false
+
 func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tween.EaseType.EASE_IN, duration : float = .1):
 	'''
 	enter num 0 - 1

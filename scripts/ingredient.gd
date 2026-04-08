@@ -24,7 +24,7 @@ func _ready() -> void:
 		Global.INGREDIENTS.DRAGONS_BREATH:
 			texture = load("res://art/dragon's breath.PNG")
 			potion_tint = Color.ORANGE
-		
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
@@ -67,5 +67,4 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = false
 		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
-			
 		area_ref.scale = Vector2(1.00, 1.00)

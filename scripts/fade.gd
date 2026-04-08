@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-
 @onready var color_rect: ColorRect = $ColorRect
 
 func _ready() -> void:
 	color_rect.modulate.a = 0
 	show()
+
 func fade(alpha_target : float, duration : float = 1.5):
 	# alpha target most be between 0 and 1
 	var tweener = get_tree().create_tween()
