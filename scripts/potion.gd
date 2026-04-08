@@ -1,12 +1,12 @@
 extends Sprite2D
 
 class_name Potion
-
+const DEFAULT_POTION_COLOR = Color.SKY_BLUE
 @export var ingredients := []
 @export var draggable := false
 @export var dragging := false
 @export var is_inside_droppable := false
-
+@export var liquid_color = DEFAULT_POTION_COLOR
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
 
 # Called when the node enters the scene tree for the first time.
@@ -35,10 +35,17 @@ func _process(_delta: float) -> void:
 			
 
 func reset_liquid_color():
-	potion_liquid.modulate = Color.SKY_BLUE
+	liquid_color = DEFAULT_POTION_COLOR
+	potion_liquid.modulate = liquid_color
 	
-func change_liquid_color(color_to_change_to : Color):
-	potion_liquid.modulate = color_to_change_to
+func change_liquid_color(changed_color : Color):
+	if ingredients.size() == 1:
+		liquid_color = changed_color
+	else:
+		liquid_color += changed_color
+	print(changed_color)
+	print(liquid_color)
+	potion_liquid.modulate = liquid_color/ingredients.size()
 
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
