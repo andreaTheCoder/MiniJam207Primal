@@ -15,7 +15,6 @@ const END_DAY = 7
 @export var time := START_TIME
 @export var score := 0
 var orders = []
-const POTION_HOME = Vector2(0,80)
 var mouse_dragging_item = null
 var potion
 var customer_happiness := true

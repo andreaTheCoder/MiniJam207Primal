@@ -4,31 +4,36 @@ class_name Potion
 
 @export var ingredients := []
 @export var draggable := false
-@export var dragging := false
 @export var is_inside_droppable := false
-const DEFAULT_LIQUID_COLOR : Color = Color.SKY_BLUE
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
+
+const DEFAULT_LIQUID_COLOR : Color = Color.SKY_BLUE
+const POTION_HOME = Vector2(0,80)
+
 
 func _ready() -> void:
 	reset_liquid_color()
-	position = Global.POTION_HOME
+	position = POTION_HOME
 	texture = preload("res://art/Empty Bottle.png")
 	Global.potion = self
 
 func _process(_delta: float) -> void:
+	# If mouse is not dragging item, just clicked and draggable (mouse inside bottle area2d), then drag 
 	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
 		Global.mouse_dragging_item = self
-		dragging = true
-	if Global.mouse_dragging_item == self and dragging and Input.is_action_pressed("click"):
+	# while it's being dragged set position to mouse position
+	if Global.mouse_dragging_item == self and Input.is_action_pressed("click"):
 		global_position = get_global_mouse_position()
 	else:
+		# behavior when released
 		if Input.is_action_just_released("click"):
+			# released inside tray
 			if is_inside_droppable:
-					reset_liquid_color()
-					EventBus.potion_submitted.emit(self, ingredients)
+				reset_liquid_color()
+				EventBus.potion_submitted.emit(self, ingredients)
+			# reset potion
 			Global.mouse_dragging_item = null
-			dragging = false
-			global_position = Global.POTION_HOME
+			global_position = POTION_HOME
 
 func reset_liquid_color():
 	potion_liquid.modulate = DEFAULT_LIQUID_COLOR
