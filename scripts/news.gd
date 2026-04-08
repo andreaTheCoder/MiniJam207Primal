@@ -3,8 +3,6 @@ extends Node2D
 @onready var Fade : CanvasLayer = $Fade
 const START = preload("res://scenes/start.tscn")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Fade.fade(1, 0)
 	Fade.fade(0, 1)
@@ -14,12 +12,6 @@ func _ready() -> void:
 		Text.text += " people and your shop got shut down."
 	else:
 		Text.text = "Your store has not made a single cent, making others wonder why you even own that land in the first place. They decide to convict you for murder and shut you down to claim the property."
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 
 func _on_restart_button_button_down() -> void:
 	EventBus.button_pressed.emit(true)

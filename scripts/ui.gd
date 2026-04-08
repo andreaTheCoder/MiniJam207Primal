@@ -10,9 +10,6 @@ const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 @export var newspaper_ref: TextureRect
 const BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
 
-# Called when the node enters the scene tree for the first time.
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioPlayer.play_music(BGM, -10, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
@@ -38,9 +35,6 @@ func _score_change(order_size):
 	Global.score += order_size*100
 	set_score()
 
-
-
-
 func _on_timer_timeout() -> void:
 	if Global.time < Global.END_TIME:
 		Global.time += 1
@@ -53,7 +47,7 @@ func set_score():
 	score_label.text = score_text
 
 func set_time():
-	var time_text = "Time: "
+	var time_text = ""
 	if Global.American:
 		if Global.time%12 == 0:
 			time_text += str(12)
@@ -67,6 +61,7 @@ func set_time():
 	else:
 		time_text += str(Global.time) + ":00"
 	time_label.text = time_text
+
 func set_day():
 	var day_text = "Day: " + str(Global.day)
 	day_label.text = day_text
@@ -89,7 +84,6 @@ func a_new_day():
 	var thing_that_tweens = get_tree().create_tween()
 	thing_that_tweens.tween_property(newspaper_ref, "modulate:a", 0, 2)
 	await fade.fade(0, 2.5).finished
-
 
 func clear_and_create_orders():
 	Global.potion.potion_liquid.hide()

@@ -9,7 +9,7 @@ class_name Ingredient
 @export var is_inside_droppable := false
 @export var area_ref = null
 @export var potion_tint : Color
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	match type:
 		Global.INGREDIENTS.FAIRY_WINGS:
@@ -25,7 +25,6 @@ func _ready() -> void:
 			texture = load("res://art/dragon's breath.PNG")
 			potion_tint = Color.ORANGE
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
 		Global.mouse_dragging_item = self
@@ -54,15 +53,13 @@ func _on_area_2d_mouse_exited() -> void:
 	scale = Vector2(1.00, 1.00)
 	draggable = false
 
-
-
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = true
 		area_ref = area.get_parent()
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
 		area_ref.scale = Vector2(1.05, 1.05)
+
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Potion and dragging:
 		is_inside_droppable = false

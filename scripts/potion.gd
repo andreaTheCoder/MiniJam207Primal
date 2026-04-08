@@ -9,15 +9,12 @@ class_name Potion
 const DEFAULT_LIQUID_COLOR : Color = Color.SKY_BLUE
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset_liquid_color()
 	position = Global.POTION_HOME
 	texture = preload("res://art/Empty Bottle.png")
 	Global.potion = self
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
 		Global.mouse_dragging_item = self
@@ -35,14 +32,13 @@ func _process(_delta: float) -> void:
 
 func reset_liquid_color():
 	potion_liquid.modulate = DEFAULT_LIQUID_COLOR
-	
+
 func change_liquid_color(color_to_change_to : Color):
 	potion_liquid.modulate = color_to_change_to
 
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
 	draggable = true
-
 
 func _on_area_2d_mouse_exited() -> void:
 	scale = Vector2(1.00, 1.00)
@@ -53,6 +49,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		is_inside_droppable = true
 		area.get_parent().scale = Vector2(1.05, 1.05)
 		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
+
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Tray:
 		is_inside_droppable = false

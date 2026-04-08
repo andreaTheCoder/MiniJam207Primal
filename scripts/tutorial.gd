@@ -1,4 +1,3 @@
-
 extends Node2D
 
 @onready var tutorial_label: RichTextLabel = $CanvasLayer/TutorialLabel
@@ -46,8 +45,6 @@ var tutorial_data : Array = [
 func _ready() -> void:
 	loadIndexItems(current_step, false)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("click") or Input.is_action_just_released("ui_accept"):
 		# Subtracts -1 prevents OBO error
@@ -57,7 +54,6 @@ func _process(_delta: float) -> void:
 		current_step += 1
 		if not current_step > tutorial_data.size() - 1:
 			loadIndexItems(current_step, true)
-
 
 func loadIndexItems(index, is_fading: bool):
 	if not tutorial_data[index]["image_path"]:

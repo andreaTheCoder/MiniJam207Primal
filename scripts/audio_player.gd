@@ -48,7 +48,6 @@ func play_music(Stream, Volume, Loop):
 		await musicPlayer.finished
 	musicPlayer.queue_free()
 
-
 func _button_pressed(isDown):
 	if isDown:
 		play_sfx(BUTTON_DOWN, 15)

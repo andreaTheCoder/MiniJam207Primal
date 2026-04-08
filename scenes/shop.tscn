@@ -12,12 +12,13 @@
 newspaper_ref = NodePath("Fade/newspaper")
 
 [node name="Day Label" parent="ui" index="3" unique_id=1768498442]
-offset_left = 834.0
-offset_right = 971.0
+offset_left = 810.0
+offset_right = 947.0
 
 [node name="Time Label" parent="ui" index="4" unique_id=1714952886]
-offset_left = 803.0
-offset_right = 1150.0
+offset_left = 810.0
+offset_right = 1071.0
+text = "9:00"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
