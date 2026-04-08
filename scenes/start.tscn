@@ -51,7 +51,21 @@ position = Vector2(554, 252.00002)
 scale = Vector2(0.27398258, 0.2739826)
 texture = ExtResource("3_kdmts")
 
+[node name="American Switch" type="Button" parent="." unique_id=17233223]
+offset_left = 956.0
+offset_top = 592.0
+offset_right = 1360.0
+offset_bottom = 707.0
+scale = Vector2(0.48, 0.48)
+theme = ExtResource("2_kdmts")
+theme_override_font_sizes/font_size = 60
+text = "Not American"
+flat = true
+expand_icon = true
+
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_button_down"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_pressed"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenButton" to="." method="_on_start_screen_button_button_down"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenButton" to="." method="_on_start_screen_button_pressed"]
+[connection signal="button_down" from="American Switch" to="." method="_on_american_switch_button_down"]
+[connection signal="pressed" from="American Switch" to="." method="_on_american_switch_pressed"]
