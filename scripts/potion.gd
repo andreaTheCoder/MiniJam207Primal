@@ -5,10 +5,8 @@ const DEFAULT_POTION_COLOR = Color.SKY_BLUE
 @export var ingredients := []
 @export var draggable := false
 @export var is_inside_droppable := false
-@export var liquid_color = DEFAULT_POTION_COLOR
+@export var total_liquid_color = DEFAULT_POTION_COLOR
 @onready var potion_liquid: Sprite2D = $"Potion Liquid"
-
-const DEFAULT_LIQUID_COLOR : Color = Color.SKY_BLUE
 const POTION_HOME = Vector2(0,80)
 
 
@@ -37,17 +35,17 @@ func _process(_delta: float) -> void:
 			global_position = POTION_HOME
 
 func reset_liquid_color():
-	liquid_color = DEFAULT_POTION_COLOR
-	potion_liquid.modulate = liquid_color
+	total_liquid_color = DEFAULT_POTION_COLOR
+	potion_liquid.modulate = total_liquid_color
 	
-func change_liquid_color(changed_color : Color):
+func change_liquid_color(color_to_mix : Color):
 	if ingredients.size() == 1:
-		liquid_color = changed_color
+		total_liquid_color = color_to_mix
 	else:
-		liquid_color += changed_color
-	print(changed_color)
-	print(liquid_color)
-	potion_liquid.modulate = liquid_color/ingredients.size()
+		total_liquid_color += color_to_mix
+	print(color_to_mix)
+	print(total_liquid_color)
+	potion_liquid.modulate = total_liquid_color/ingredients.size()
 
 func _on_area_2d_mouse_entered() -> void:
 	scale = Vector2(1.05, 1.05)
