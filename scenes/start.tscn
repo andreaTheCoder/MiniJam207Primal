@@ -32,7 +32,7 @@ text = "tutorial"
 flat = true
 expand_icon = true
 
-[node name="StartScreenButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=622851497]
+[node name="StartScreenStartButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=622851497]
 layout_mode = 2
 theme = ExtResource("2_kdmts")
 theme_override_font_sizes/font_size = 60
@@ -51,7 +51,7 @@ position = Vector2(554, 252.00002)
 scale = Vector2(0.27398258, 0.2739826)
 texture = ExtResource("3_kdmts")
 
-[node name="American Switch" type="Button" parent="." unique_id=17233223]
+[node name="American Button" type="Button" parent="." unique_id=17233223]
 offset_left = 956.0
 offset_top = 592.0
 offset_right = 1360.0
@@ -59,13 +59,13 @@ offset_bottom = 707.0
 scale = Vector2(0.48, 0.48)
 theme = ExtResource("2_kdmts")
 theme_override_font_sizes/font_size = 60
-text = "Not American"
+text = "American"
 flat = true
 expand_icon = true
 
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_button_down"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_on_start_screen_tutorial_button_pressed"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenButton" to="." method="_on_start_screen_button_button_down"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenButton" to="." method="_on_start_screen_button_pressed"]
-[connection signal="button_down" from="American Switch" to="." method="_on_american_switch_button_down"]
-[connection signal="pressed" from="American Switch" to="." method="_on_american_switch_pressed"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_button_down"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenTutorialButton" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/StartScreenStartButton" to="." method="_button_down"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartScreenStartButton" to="." method="_button_pressed" flags=18]
+[connection signal="button_down" from="American Button" to="." method="_button_down"]
+[connection signal="pressed" from="American Button" to="." method="_button_pressed" flags=18]

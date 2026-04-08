@@ -1,6 +1,12 @@
 extends Node
 
 const SHOP = preload("res://scenes/shop.tscn")
+const START_TIME = 9
+const END_TIME = 21
+const END_DAY = 7
+const SCALE_SIZE = Vector2(1.05, 1.05)
+const DEFAULT_SIZE = Vector2(1.00, 1.00)
+
 enum INGREDIENTS
 {
 	FAIRY_WINGS,
@@ -8,18 +14,17 @@ enum INGREDIENTS
 	DRIED_BLURPLEBERRY,
 	DRAGONS_BREATH
 }
-const START_TIME = 9
-const END_TIME = 21
-const END_DAY = 7
+
 @export var day := 1
 @export var time := START_TIME
 @export var score := 0
-var orders = []
-var mouse_dragging_item = null
-var potion
-var customer_happiness := true
-var American = true
+@export var orders = []
+@export var mouse_dragging_item = null
+@export var customer_happiness := true
+@export var American = true
 
+var newspaper
+var potion
 const HOME_BREW = {
 	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRIED_BLURPLEBERRY],
 	"name" : "Home Brew"
@@ -56,13 +61,10 @@ const THE_FORBIDDEN_MIXTURE = {
 	"ingredients" : [INGREDIENTS.ALLIGATOR_TEARS, INGREDIENTS.DRAGONS_BREATH, INGREDIENTS.DRIED_BLURPLEBERRY, INGREDIENTS.FAIRY_WINGS],
 	"name" : "Forbidden Mixture"
 }
-const POTIONS := [HOME_BREW, SILLY_SMOOTHIE, POTION_OF_TATTLE, STINK_BOMB, MELANCHOLY_SLURPEE, POISONOUS_POISON, POTION_OF_HEEL, BLURPLE_JUICE, THE_FORBIDDEN_MIXTURE]
+const POTIONS = [HOME_BREW, SILLY_SMOOTHIE, POTION_OF_TATTLE, STINK_BOMB, MELANCHOLY_SLURPEE, POISONOUS_POISON, POTION_OF_HEEL, BLURPLE_JUICE, THE_FORBIDDEN_MIXTURE]
 
 func tween_scale(target_scale : Vector2, object, ease_type : Tween.EaseType = Tween.EaseType.EASE_IN, duration : float = .1):
-	'''
-	enter num 0 - 1
-	if the thing is at 0, 1 already it won't do anything
-	'''
+	#enter num 0 - 1, if the thing is at 0, 1 already it won't do anything
 	if duration < 0:
 		printerr("invalid duration, it's smaller than 0")
 	var tweener = get_tree().create_tween()

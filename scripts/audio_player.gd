@@ -1,21 +1,20 @@
 extends Node2D
 
-#add SFX definitions here and then play the sfx in other scripts with the functions
-#for example const CLICK = preload("res://audio/clicksound.mp3")
-
-# the difference between playing music and SFX is that
-# only one song can play at a time so if you call the music 
-# it will override the other one but the sfx can play
-# simultaneously
+# add the definitions here and then play them in other scripts with the functions
 const BUTTON_DOWN = preload("res://audio/click_002.ogg")
 const BUTTON_UP = preload("res://audio/click_003.ogg")
 const ERROR = preload("res://audio/error_008.ogg")
 const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
 const DROPPED_IN_POTION = preload("res://audio/maximize_008.ogg")
+const START_BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
+const GAME_BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
+
+@export var current_player = null
 
 func _ready():
 	EventBus.button_pressed.connect(_button_pressed)
 
+# multiple sfx can play simultaniously, so they won't get overridden
 func play_sfx(Stream, Volume, pitch = 1.0):
 	var fx = AudioStreamPlayer.new()
 	fx.stream = Stream
@@ -27,8 +26,7 @@ func play_sfx(Stream, Volume, pitch = 1.0):
 	await fx.finished
 	fx.queue_free()
 
-var current_player = null
-
+# only one song can play at a time, so if you call music, the old music will be overridden
 func play_music(Stream, Volume, Loop):
 	if current_player:
 		if Stream == current_player.stream:

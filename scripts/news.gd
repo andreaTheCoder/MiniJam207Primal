@@ -1,15 +1,15 @@
 extends Node2D
+
+const START = preload("res://scenes/start.tscn")
+
 @onready var Text : RichTextLabel = $RichTextLabel
 @onready var Fade : CanvasLayer = $Fade
-const START = preload("res://scenes/start.tscn")
 
 func _ready() -> void:
 	Fade.fade(1, 0)
 	Fade.fade(0, 1)
 	if Global.score != 0:
-		Text.text = "All the crimes got traced back to you, with you killing "
-		Text.text += str(int(float(Global.score)/200))
-		Text.text += " people and your shop got shut down."
+		Text.text = "All the crimes got traced back to you, with you killing " + str(int(float(Global.score)/200)) + " people and your shop got shut down."
 	else:
 		Text.text = "Your store has not made a single cent, making others wonder why you even own that land in the first place. They decide to convict you for murder and shut you down to claim the property."
 

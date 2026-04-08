@@ -7,7 +7,7 @@ func _ready() -> void:
 	show()
 
 func fade(alpha_target : float, duration : float = 1.5):
-	# alpha target most be between 0 and 1
+	# alpha target must be between 0 and 1
 	var tweener = get_tree().create_tween()
 	tweener.tween_property(color_rect, "modulate:a", alpha_target, duration)
 	return tweener

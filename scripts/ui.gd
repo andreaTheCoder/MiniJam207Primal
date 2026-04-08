@@ -1,17 +1,18 @@
 extends CanvasLayer
-@onready var time_label: RichTextLabel = $"Time Label"
-@onready var day_label: RichTextLabel = $"Day Label"
-@onready var score_label: RichTextLabel = $"Score Label"
+
 const TICKET_PANEL: PackedScene = preload("res://scenes/ticket_panel.tscn")
 const NEWS: PackedScene = preload("res://scenes/news.tscn")
 const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
+
+@onready var time_label: RichTextLabel = $"Time Label"
+@onready var day_label: RichTextLabel = $"Day Label"
+@onready var score_label: RichTextLabel = $"Score Label"
 @onready var text_bubble_container: VBoxContainer = $VerticalTextBubbleContainer
 @onready var fade: CanvasLayer = $Fade
-@export var newspaper_ref: TextureRect
-const BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
+@onready var newspaper_ref: TextureRect = $"Fade/newspaper"
 
 func _ready() -> void:
-	AudioPlayer.play_music(BGM, -10, true)
+	AudioPlayer.play_music(AudioPlayer.GAME_BGM, -10, true)
 	EventBus.out_of_tickets.connect(_out_of_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
@@ -23,14 +24,11 @@ func _out_of_tickets():
 	for i in range(3):
 		var temp = TICKET_PANEL.instantiate()
 		$MarginContainer/HorizontalTicketContainer.add_child(temp)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _add_customer_text():
 	var ct = CUSTOMER_TEXT.instantiate()
 	text_bubble_container.add_child(ct)
-	
+
 func _score_change(order_size):
 	Global.score += order_size*100
 	set_score()
@@ -39,7 +37,7 @@ func _on_timer_timeout() -> void:
 	if Global.time < Global.END_TIME:
 		Global.time += 1
 		set_time()
-		if Global.time >= 24:
+		if Global.time >= Global.END_TIME:
 			a_new_day()
 
 func set_score():
@@ -47,19 +45,19 @@ func set_score():
 	score_label.text = score_text
 
 func set_time():
-	var time_text = ""
+	var time_text
 	if Global.American:
 		if Global.time%12 == 0:
-			time_text += str(12)
+			time_text = str(12)
 		else:
-			time_text += str(Global.time%12)
+			time_text = str(Global.time%12)
 		time_text += ":00 "
 		if Global.time > 11 and Global.time < 24:
 			time_text += "PM"
 		else:
 			time_text += "AM"
 	else:
-		time_text += str(Global.time) + ":00"
+		time_text = str(Global.time) + ":00"
 	time_label.text = time_text
 
 func set_day():
@@ -86,7 +84,6 @@ func a_new_day():
 	await fade.fade(0, 2.5).finished
 
 func clear_and_create_orders():
-	Global.potion.potion_liquid.hide()
 	for orders in Global.orders:
 		orders.queue_free()
 	Global.orders.clear()

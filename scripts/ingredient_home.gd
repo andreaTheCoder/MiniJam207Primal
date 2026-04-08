@@ -3,12 +3,10 @@ extends Area2D
 class_name IngredientHome
 
 const INGREDIENT = preload("res://scenes/ingredient.tscn")
+
 @export var has_ingredient := true
 @export var type : Global.INGREDIENTS
-var child_ref = null
-
-func _ready() -> void:
-	spawn_ingredient()
+@export var child_ref = null
 
 func _process(_delta: float) -> void:
 	if child_ref == null:

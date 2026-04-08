@@ -1,34 +1,28 @@
 extends Node2D
-@onready var american_switch: Button = $"American Switch"
-const BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
+
+@onready var tutorial_button: Button = $"CanvasLayer/VBoxContainer/StartScreenTutorialButton"
+@onready var start_button: Button = $CanvasLayer/VBoxContainer/StartScreenStartButton
+@onready var american_button: Button = $"American Button"
 
 func _ready() -> void:
-	AudioPlayer.play_music(BGM, -5, true)
-
-func _process(_delta: float) -> void:
-	pass
-
-func _on_start_screen_button_button_down() -> void:
-	EventBus.button_pressed.emit(true)
-
-func _on_start_screen_button_pressed() -> void:
-	EventBus.button_pressed.emit(false)
-	get_tree().change_scene_to_packed(load("res://scenes/shop.tscn"))
-
-func _on_start_screen_tutorial_button_button_down() -> void:
-	EventBus.button_pressed.emit(true)
-
-func _on_start_screen_tutorial_button_pressed() -> void:
-	EventBus.button_pressed.emit(false)
-	get_tree().change_scene_to_packed(load("res://scenes/cutscene_tutorial.tscn"))
-
-func _on_american_switch_button_down() -> void:
-	EventBus.button_pressed.emit(false)
-
-func _on_american_switch_pressed() -> void:
-	EventBus.button_pressed.emit(false)
-	Global.American = !Global.American
+	AudioPlayer.play_music(AudioPlayer.START_BGM, -5, true)
 	if Global.American:
-		american_switch.text = "American"
+		american_button.text = "American"
 	else:
-		american_switch.text = "Not American"
+		american_button.text = "Not American"
+
+func _button_down() -> void:
+	EventBus.button_pressed.emit(true)
+
+func _button_pressed(source: BaseButton) -> void:
+	EventBus.button_pressed.emit(false)
+	if source == tutorial_button:
+		get_tree().change_scene_to_packed(load("res://scenes/cutscene_tutorial.tscn"))
+	elif source == start_button:
+		get_tree().change_scene_to_packed(load("res://scenes/shop.tscn"))
+	elif source == american_button:
+		Global.American = !Global.American
+		if Global.American:
+			american_button.text = "American"
+		else:
+			american_button.text = "Not American"

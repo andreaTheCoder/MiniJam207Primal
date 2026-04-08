@@ -8,8 +8,7 @@
 
 [node name="shop" type="Node2D" unique_id=404250698]
 
-[node name="ui" parent="." unique_id=1764728883 node_paths=PackedStringArray("newspaper_ref") instance=ExtResource("1_lx5au")]
-newspaper_ref = NodePath("Fade/newspaper")
+[node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_lx5au")]
 
 [node name="Day Label" parent="ui" index="3" unique_id=1768498442]
 offset_left = 810.0

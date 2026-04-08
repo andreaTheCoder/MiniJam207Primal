@@ -2,11 +2,9 @@ extends Sprite2D
 
 class_name Ingredient
 
-@export var type : Global.INGREDIENTS
-@export var draggable := false
-@export var dragging := false
-@export var leftHome := false
-@export var is_inside_droppable := false
+@export var type: Global.INGREDIENTS
+@export var is_touching_mouse := false
+@export var is_inside_potion := false
 @export var area_ref = null
 @export var potion_tint : Color
 
@@ -26,42 +24,38 @@ func _ready() -> void:
 			potion_tint = Color.ORANGE
 
 func _process(_delta: float) -> void:
-	if Global.mouse_dragging_item == null and draggable and Input.is_action_just_pressed("click"):
+	if Global.mouse_dragging_item == null and Input.is_action_just_pressed("click") and is_touching_mouse:
 		Global.mouse_dragging_item = self
-		dragging = true
-	if Global.mouse_dragging_item == self and dragging and Input.is_action_pressed("click"):
+	elif Global.mouse_dragging_item == self and Input.is_action_pressed("click"):
 		global_position = get_global_mouse_position()
-	else:
-		if Input.is_action_just_released("click"):
-			if dragging:
-				dragging = false
-				if is_inside_droppable:
-					var random_pitch = randf_range(.5, 2)
-					AudioPlayer.play_sfx(AudioPlayer.DROPPED_IN_POTION, 0, random_pitch)
-					area_ref.ingredients.append(type)
-					area_ref.modulate = Color(1.0, 1.0, 1.0, 1.0)
-					area_ref.change_liquid_color(potion_tint)
-				Global.mouse_dragging_item = null
-				await Global.tween_scale(Vector2(0,0),self).finished
-				queue_free()
+	elif Global.mouse_dragging_item == self and Input.is_action_just_released("click"):
+		if is_inside_potion:
+			var random_pitch = randf_range(.5, 2)
+			AudioPlayer.play_sfx(AudioPlayer.DROPPED_IN_POTION, 0, random_pitch)
+			area_ref.ingredients.append(type)
+			area_ref.modulate = Color.WHITE
+			area_ref.change_liquid_color(potion_tint)
+		Global.mouse_dragging_item = null
+		await Global.tween_scale(Vector2(0,0),self).finished
+		queue_free()
 
 func _on_area_2d_mouse_entered() -> void:
-	scale = Vector2(1.05, 1.05)
-	draggable = true
+	scale = Global.SCALE_SIZE
+	is_touching_mouse = true
 
 func _on_area_2d_mouse_exited() -> void:
-	scale = Vector2(1.00, 1.00)
-	draggable = false
+	scale = Global.DEFAULT_SIZE
+	is_touching_mouse = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Potion and dragging:
-		is_inside_droppable = true
+	if area.get_parent() is Potion:
+		is_inside_potion = true
 		area_ref = area.get_parent()
-		area.get_parent().modulate = Color(Color.GREEN_YELLOW, 1)
-		area_ref.scale = Vector2(1.05, 1.05)
+		area.get_parent().modulate = Color.GREEN_YELLOW
+		area_ref.scale = Global.SCALE_SIZE
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.get_parent() is Potion and dragging:
-		is_inside_droppable = false
-		area.get_parent().modulate = Color(1.0, 1.0, 1.0, 1.0)
-		area_ref.scale = Vector2(1.00, 1.00)
+	if area.get_parent() is Potion:
+		is_inside_potion = false
+		area.get_parent().modulate = Color.WHITE
+		area_ref.scale = Global.DEFAULT_SIZE
