@@ -11,14 +11,15 @@ func potion_submit(ingredients):
 	if not Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())):
 		Global.potion.ingredients.clear()
 	else:
-		var ingredient_position = 0
+		# TODO: refacotr so we use built in for loop support
+		var order_pos = 0
 		for orders in Global.orders:
 			var tempPotionIngredients = orders.potion["ingredients"]
 			var tempIngredients = ingredients.duplicate()
 			if sort_enum_return_as_ints(tempIngredients) == sort_enum_return_as_ints(tempPotionIngredients):
 				var temp = orders
 				EventBus.score_change.emit(tempIngredients.size())
-				Global.orders.remove_at(ingredient_position)
+				Global.orders.remove_at(order_pos)
 				temp.queue_free()
 				if Global.orders == []:
 					EventBus.create_tickets.emit()
@@ -27,7 +28,7 @@ func potion_submit(ingredients):
 				EventBus.add_customer_text.emit()
 				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 1.25)
 				return
-			ingredient_position += 1
+			order_pos += 1
 	Global.potion.ingredients.clear()
 	Global.customer_happiness = false
 	EventBus.add_customer_text.emit()
