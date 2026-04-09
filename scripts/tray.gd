@@ -7,9 +7,9 @@ class_name Tray
 func _ready() -> void:
 	EventBus.potion_submitted.connect(potion_submit)
 
-func potion_submit(potionparam, ingredients):
+func potion_submit(ingredients):
 	if not Global.orders.any(func(x):return (x.potion["ingredients"].size() == ingredients.size())):
-		potionparam.ingredients.clear()
+		Global.potion.ingredients.clear()
 	else:
 		var ingredient_position = 0
 		for orders in Global.orders:
@@ -20,23 +20,19 @@ func potion_submit(potionparam, ingredients):
 				EventBus.score_change.emit(tempIngredients.size())
 				Global.orders.remove_at(ingredient_position)
 				temp.queue_free()
-				potionparam.ingredients.clear()
-				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 1.25)
-				Global.customer_happiness = true
-				EventBus.add_customer_text.emit()
 				if Global.orders == []:
 					EventBus.create_tickets.emit()
+				Global.potion.ingredients.clear()
+				Global.customer_happiness = true
+				EventBus.add_customer_text.emit()
+				AudioPlayer.play_sfx(AudioPlayer.CONFIRMATION, 1.25)
 				return
 			ingredient_position += 1
-		potionparam.ingredients.clear()
+	Global.potion.ingredients.clear()
 	Global.customer_happiness = false
 	EventBus.add_customer_text.emit()
-	order_fail(potionparam)
-
-func order_fail(potion_ref):
-	potion_ref.ingredients.clear()
 	AudioPlayer.play_sfx(AudioPlayer.ERROR)
-	
+
 func sort_enum_return_as_ints(arr):
 	var tempArray := []
 	for ingredient in arr:

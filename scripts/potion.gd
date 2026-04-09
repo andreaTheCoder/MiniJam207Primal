@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 			if is_inside_tray:
 				# resets potion
 				reset_liquid_color()
-				EventBus.potion_submitted.emit(self, ingredients)
+				EventBus.potion_submitted.emit(ingredients)
 			# resets potion location
 			Global.mouse_dragging_item = null
 			global_position = POTION_HOME
