@@ -1,13 +1,13 @@
 extends Node2D
 
 # add the definitions here and then play them in other scripts with the functions
-const BUTTON_DOWN = preload("res://audio/click_002.ogg")
-const BUTTON_UP = preload("res://audio/click_003.ogg")
-const ERROR = preload("res://audio/error_008.ogg")
-const CONFIRMATION = preload("res://audio/confirmation_001.ogg")
-const DROPPED_IN_POTION = preload("res://audio/maximize_008.ogg")
+const BUTTON_DOWN = preload("res://audio/click_down.ogg")
+const BUTTON_UP = preload("res://audio/click_up.ogg")
+const ERROR = preload("res://audio/error.ogg")
+const CONFIRMATION = preload("res://audio/confimation.ogg")
+const DROPPED_IN_POTION = preload("res://audio/drop.ogg")
 const START_BGM = preload("res://audio/Potion Shop BG Music #1.mp3")
-const GAME_BGM = preload("res://audio/tunetank-jazz-cafe-music-348267.mp3")
+const GAME_BGM = preload("res://audio/Game_BGM.mp3")
 
 @export var current_player = null
 @export var Music_Volume_Modifier := 1.0
