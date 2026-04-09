@@ -42,9 +42,9 @@ expand_icon = true
 
 [node name="StartBg" type="Sprite2D" parent="." unique_id=117864839]
 self_modulate = Color(1.3386899, 1.3386899, 1.3386899, 1)
-position = Vector2(580, 329.00003)
-scale = Vector2(0.60648143, 0.60648143)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_bodal")
+centered = false
 
 [node name="GameLogo" type="Sprite2D" parent="." unique_id=1610166547]
 position = Vector2(554, 252.00002)

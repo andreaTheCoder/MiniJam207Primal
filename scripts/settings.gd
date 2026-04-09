@@ -21,10 +21,10 @@ func _slider_value_changed(value: float, source: Range) -> void:
 			AudioPlayer.SFX_Volume_Modifier = value/100
 
 func _button_down() -> void:
-	EventBus.button_pressed.emit(true)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_DOWN)
 
 func _button_pressed(source: BaseButton) -> void:
-	EventBus.button_pressed.emit(false)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_UP)
 	match source:
 		back_button:
 			get_tree().change_scene_to_packed(load("res://scenes/start.tscn"))

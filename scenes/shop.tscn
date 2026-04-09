@@ -10,19 +10,10 @@
 
 [node name="ui" parent="." unique_id=1764728883 instance=ExtResource("1_lx5au")]
 
-[node name="Day Label" parent="ui" index="3" unique_id=1768498442]
-offset_left = 810.0
-offset_right = 947.0
-
-[node name="Time Label" parent="ui" index="4" unique_id=1714952886]
-offset_left = 810.0
-offset_right = 1071.0
-text = "9:00"
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=244447270]
 
 [node name="ShopBackground" type="Sprite2D" parent="." unique_id=166722271]
-scale = Vector2(0.6064815, 0.6064815)
+scale = Vector2(0.5999999, 0.59999996)
 texture = ExtResource("5_2fc2m")
 
 [node name="Tray" parent="." unique_id=611555033 instance=ExtResource("3_032fp")]
@@ -56,5 +47,3 @@ type = 1
 
 [node name="Ingredient Home" parent="Homes" unique_id=982167561 instance=ExtResource("2_1l46r")]
 position = Vector2(-471, 226)
-
-[editable path="ui"]

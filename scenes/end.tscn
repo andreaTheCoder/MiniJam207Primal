@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://32rcwmj8bjge"]
 
-[ext_resource type="Script" uid="uid://csvy6j1g2wm1o" path="res://scripts/news.gd" id="1_yfdcv"]
-[ext_resource type="Texture2D" uid="uid://dlwedck4jkrkn" path="res://art/News 7.png" id="2_ft71n"]
-[ext_resource type="Theme" uid="uid://dn4leoiqtpx61" path="res://other/default.tres" id="3_bqk8j"]
-[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="3_ft71n"]
+[ext_resource type="Script" uid="uid://csvy6j1g2wm1o" path="res://scripts/end.gd" id="1_bvfni"]
+[ext_resource type="Theme" uid="uid://dn4leoiqtpx61" path="res://other/default.tres" id="2_s4tl2"]
+[ext_resource type="Texture2D" uid="uid://dlwedck4jkrkn" path="res://art/News 7.png" id="3_8hmjt"]
+[ext_resource type="PackedScene" uid="uid://c16xa3e3pvs63" path="res://scenes/fade.tscn" id="4_o5lv4"]
 
-[node name="News" type="Node2D" unique_id=1949104952]
-script = ExtResource("1_yfdcv")
+[node name="End" type="Node2D" unique_id=1949104952]
+script = ExtResource("1_bvfni")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1591796369]
 offset_left = -107.0
@@ -20,7 +20,7 @@ offset_left = 535.0
 offset_top = 43.0
 offset_right = 1133.0
 offset_bottom = 639.0
-theme = ExtResource("3_bqk8j")
+theme = ExtResource("2_s4tl2")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 35
 text = "You killed ___ people"
@@ -29,14 +29,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=58647311]
 position = Vector2(268, 319)
 scale = Vector2(0.53554237, 0.5355424)
-texture = ExtResource("2_ft71n")
+texture = ExtResource("3_8hmjt")
 
 [node name="RestartButton" type="Button" parent="." unique_id=582549622]
 offset_left = 694.0
 offset_top = 514.0
 offset_right = 907.0
 offset_bottom = 629.0
-theme = ExtResource("3_bqk8j")
+theme = ExtResource("2_s4tl2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "restart"
@@ -44,7 +44,7 @@ flat = true
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("3_ft71n")]
+[node name="Fade" parent="." unique_id=383164694 instance=ExtResource("4_o5lv4")]
 
 [connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_button_down"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

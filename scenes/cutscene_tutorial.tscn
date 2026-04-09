@@ -14,9 +14,9 @@ layer = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1232120192]
 
 [node name="TutorialImage" type="Sprite2D" parent="CanvasLayer" unique_id=1665876256]
-position = Vector2(578.4445, 331.875)
-scale = Vector2(0.60682863, 0.61319435)
+scale = Vector2(0.6001855, 0.6064815)
 texture = ExtResource("3_4lcpb")
+centered = false
 
 [node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1700390402]
 offset_left = 59.0

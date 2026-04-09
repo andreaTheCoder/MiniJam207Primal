@@ -10,9 +10,9 @@
 script = ExtResource("1_5p8wc")
 
 [node name="TutorialImage" type="Sprite2D" parent="." unique_id=1287850015]
-position = Vector2(578.4445, 331.875)
-scale = Vector2(0.60682863, 0.61319435)
+scale = Vector2(0.60018545, 0.60648143)
 texture = ExtResource("2_6wm04")
+centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=560423539]
 offset_left = 440.0

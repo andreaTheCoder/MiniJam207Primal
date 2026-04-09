@@ -17,7 +17,7 @@ script = ExtResource("2_itmmj")
 [node name="Area2D" type="Area2D" parent="." unique_id=1889516584]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=952006365]
-position = Vector2(-4.545454, 80.30303)
+position = Vector2(-3.0517578e-05, 75.75757)
 shape = SubResource("CircleShape2D_le10y")
 
 [node name="Potion Liquid" type="Sprite2D" parent="." unique_id=1746788152]

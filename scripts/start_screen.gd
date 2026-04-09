@@ -8,10 +8,10 @@ func _ready() -> void:
 	AudioPlayer.play_music(AudioPlayer.START_BGM, 1, true)
 
 func _button_down() -> void:
-	EventBus.button_pressed.emit(true)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_DOWN)
 
 func _button_pressed(source: BaseButton) -> void:
-	EventBus.button_pressed.emit(false)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_UP)
 	match source:
 		tutorial_button:
 			get_tree().change_scene_to_packed(load("res://scenes/cutscene_tutorial.tscn"))

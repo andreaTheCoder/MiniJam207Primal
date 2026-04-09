@@ -14,7 +14,7 @@ const GAME_BGM = preload("res://audio/Game_BGM.mp3")
 @export var SFX_Volume_Modifier := 1.0
 #TODO the volume thingy doesn't actually work, since it only modifies the volume, not negates it.
 func _ready():
-	EventBus.button_pressed.connect(_button_pressed)
+	pass
 
 # multiple sfx can play simultaniously, so they won't get overridden
 func play_sfx(Stream, Volume = 5.0, pitch = 1.0):
@@ -47,9 +47,3 @@ func play_music(Stream, Volume, Loop):
 		current_player = musicPlayer
 		await musicPlayer.finished
 	musicPlayer.queue_free()
-
-func _button_pressed(isDown):
-	if isDown:
-		play_sfx(BUTTON_DOWN)
-	else:
-		play_sfx(BUTTON_UP)

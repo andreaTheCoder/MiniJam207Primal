@@ -14,8 +14,8 @@ func _ready() -> void:
 		Text.text = "Your store has not made a single cent, making others wonder why you even own that land in the first place. They decide to convict you for murder and shut you down to claim the property."
 
 func _on_restart_button_button_down() -> void:
-	EventBus.button_pressed.emit(true)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_DOWN)
 
 func _on_restart_button_pressed() -> void:
-	EventBus.button_pressed.emit(false)
+	AudioPlayer.play_sfx(AudioPlayer.BUTTON_UP)
 	get_tree().change_scene_to_packed(START)
