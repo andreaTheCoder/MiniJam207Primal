@@ -17,8 +17,8 @@ func _ready() -> void:
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
 	newspaper_ref.modulate.a = 0
-	set_time()
-	set_day()
+	set_time_text() 
+	set_day_text()
 
 func _out_of_tickets():
 	for i in range(3):
@@ -31,20 +31,20 @@ func _add_customer_text():
 
 func _score_change(order_size):
 	Global.score += order_size*100
-	set_score()
+	set_score_text()
 
 func _on_timer_timeout() -> void:
 	if Global.time < Global.END_TIME:
 		Global.time += 1
-		set_time()
+		set_time_text()
 		if Global.time >= Global.END_TIME:
 			a_new_day()
 
-func set_score():
+func set_score_text():
 	var score_text = "Score: " + str(Global.score)
 	score_label.text = score_text
 
-func set_time():
+func set_time_text():
 	var time_text
 	if Global.Hour_Clock_24:
 		if Global.time%12 == 0:
@@ -60,27 +60,33 @@ func set_time():
 		time_text = str(Global.time) + ":00"
 	time_label.text = time_text
 
-func set_day():
+func set_day_text():
 	var day_text = "Day: " + str(Global.day)
 	day_label.text = day_text
 
+# connected to ontimertimeout
 func a_new_day():
 	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		EventBus.day_end.emit()
 		clear_and_create_orders()
+		
+		# fade newspaper in
 		var tweener = get_tree().create_tween()
 		await tweener.tween_property(newspaper_ref, "modulate:a", 1, 1).finished
 		await get_tree().create_timer(3).timeout
+		
 		Global.day += 1
-		set_day()
+		set_day_text()
 		Global.time = Global.START_TIME
-		set_time()
+		set_time_text()
 	else:
 		get_tree().change_scene_to_packed(NEWS)
 		return
-	var thing_that_tweens = get_tree().create_tween()
-	thing_that_tweens.tween_property(newspaper_ref, "modulate:a", 0, 2)
+		
+	# fade it out
+	var news_tweener = get_tree().create_tween()
+	news_tweener.tween_property(newspaper_ref, "modulate:a", 0, 2)
 	await fade.fade(0, 2.5).finished
 
 func clear_and_create_orders():

@@ -47,13 +47,14 @@ func _on_area_2d_mouse_exited() -> void:
 	scale = Global.DEFAULT_SIZE
 	is_touching_mouse = false
 
+# if ingredient is in potion
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Potion:
 		is_inside_potion = true
 		area_ref = area.get_parent()
 		area.get_parent().modulate = Color.GREEN_YELLOW
 		area_ref.scale = Global.SCALE_SIZE
-
+# if ingredient leaves potion
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Potion:
 		is_inside_potion = false

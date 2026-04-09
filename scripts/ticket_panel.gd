@@ -9,6 +9,7 @@ class_name order
 func _ready() -> void:
 	Global.orders.append(self)
 	ticket_label.text = potion["name"] + ":\n"
+	
 	#makes sure that no extra commas
 	var comma = false
 	for ingedient_num in potion["ingredients"]:
