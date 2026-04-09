@@ -21,6 +21,10 @@ func _ready() -> void:
 	set_day_text()
 
 func _create_tickets():
+	for orders in Global.orders:
+		orders.queue_free()
+	Global.orders.clear()
+	Global.potion.ingredients.clear()
 	for i in range(3):
 		var temp = TICKET_PANEL.instantiate()
 		$MarginContainer/HorizontalTicketContainer.add_child(temp)
@@ -69,7 +73,7 @@ func a_new_day():
 	await fade.fade(1, 1.5).finished
 	if Global.day < Global.END_DAY:
 		EventBus.day_end.emit()
-		clear_and_create_orders()
+		EventBus.create_tickets.emit()
 		
 		# fade newspaper in
 		var tweener = get_tree().create_tween()
@@ -88,10 +92,3 @@ func a_new_day():
 	var news_tweener = get_tree().create_tween()
 	news_tweener.tween_property(newspaper_ref, "modulate:a", 0, 2)
 	await fade.fade(0, 2.5).finished
-
-func clear_and_create_orders():
-	for orders in Global.orders:
-		orders.queue_free()
-	Global.orders.clear()
-	Global.potion.ingredients.clear()
-	EventBus.create_tickets.emit()
