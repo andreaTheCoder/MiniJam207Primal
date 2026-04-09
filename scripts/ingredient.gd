@@ -17,7 +17,7 @@ func _ready() -> void:
 			texture = load("res://art/alligator tears.PNG")
 			potion_tint = Color.WEB_GREEN
 		Global.INGREDIENTS.DRIED_BLURPLEBERRY:
-			texture = load("res://art/blurpleberry.PNG")
+			texture = load("res://art/dried blurpleberry.PNG")
 			potion_tint = Color.PURPLE
 		Global.INGREDIENTS.DRAGONS_BREATH:
 			texture = load("res://art/dragon's breath.PNG")

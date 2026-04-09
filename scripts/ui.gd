@@ -13,14 +13,14 @@ const CUSTOMER_TEXT : PackedScene = preload("res://scenes/customer_text.tscn")
 
 func _ready() -> void:
 	AudioPlayer.play_music(AudioPlayer.GAME_BGM, 1, true)
-	EventBus.out_of_tickets.connect(_out_of_tickets)
+	EventBus.create_tickets.connect(_create_tickets)
 	EventBus.add_customer_text.connect(_add_customer_text)
 	EventBus.score_change.connect(_score_change)
 	newspaper_ref.modulate.a = 0
 	set_time_text() 
 	set_day_text()
 
-func _out_of_tickets():
+func _create_tickets():
 	for i in range(3):
 		var temp = TICKET_PANEL.instantiate()
 		$MarginContainer/HorizontalTicketContainer.add_child(temp)
@@ -94,4 +94,4 @@ func clear_and_create_orders():
 		orders.queue_free()
 	Global.orders.clear()
 	Global.potion.ingredients.clear()
-	EventBus.out_of_tickets.emit()
+	EventBus.create_tickets.emit()

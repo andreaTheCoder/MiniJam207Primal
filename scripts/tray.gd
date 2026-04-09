@@ -25,7 +25,7 @@ func potion_submit(potionparam, ingredients):
 				Global.customer_happiness = true
 				EventBus.add_customer_text.emit()
 				if Global.orders == []:
-					EventBus.out_of_tickets.emit()
+					EventBus.create_tickets.emit()
 				return
 			ingredient_position += 1
 		potionparam.ingredients.clear()
